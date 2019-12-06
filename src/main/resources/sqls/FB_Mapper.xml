@@ -1,4 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="sarang.hagae">
+
+<!-- 글 작성 -->
+<insert id="insertBoard" parameterType="FBdto">
+INSERT INTO POSTBOARD
+(SEQ, U_ID, TITLE, CONTENT, REFER, STEP, DEPTH, F_NAME, DELFLAG, REGDATE, READCOUNT, B_TYPE)
+VALUES(POSTBOARD_SEQ.NEXTVAL, #{u_id}, #{title}, #{content},(SELECT NVL(MAX(REFER),0)+1 FROM POSTBOARD),
+0,0, #{f_name},'N',SYSDATE,0,#{b_type})
+</insert>
+
+
+<!-- 글 수정 -->
+<update id="modifyBoard" parameterType="FBdto">
+UPDATE POSTBOARD
+SET TITLE=#{title}, CONTENT=#{content}	
+WHERE SEQ=#{seq}
+</update>
+
+
+<!-- 글 삭제 -->
+<update id="delBoard" parameterType="java.lang.String">
+UPDATE POSTBOARD
+SET DELFLAG = 'Y'
+WHERE SEQ=#{seq}
+</update>
+
+
+<!-- 다중 삭제 -->
+<update id="delflagBoard" parameterType="java.util.Map">
+UPDATE POSTBOARD
+SET DELFLAG = 'Y'
+WHERE DELFLAG='N' AND SEQ IN
+<foreach collection="seq_" item="seq" open="(" separator="," close=")">
+			#{seq}
+		</foreach>
+</update>
+
+
+<!-- 글 검색 (제목) -->
+<select id="searchTitle" parameterType="java.lang.String" resultType="FBdto">
+SELECT * FROM POSTBOARD
+WHERE TITLE LIKE '%'||#{keyword}||'%'
+</select>
+
+
+
+<!-- 글 검색 (작성자) -->
+<select id="searchId" parameterType="java.lang.String" resultType="FBdto">
+SELECT * FROM POSTBOARD
+WHERE U_ID LIKE '%'||#{keyword}||'%'
+</select>
+
+
+
+<!-- 전체 글 보기 -->
+<select id="allBoard" resultType="FBdto" parameterType="java.lang.String">
+SELECT SEQ, U_ID, TITLE, CONTENT, REFER, STEP, DEPTH, F_NAME, DELFLAG, REGDATE, READCOUNT,B_TYPE
+FROM POSTBOARD
+WHERE B_TYPE=#{selEtc}
+ORDER BY REFER DESC, STEP ASC
+</select>
+
+
+<!-- 상세 글 보기 -->
+<select id="detailBoard" parameterType="java.lang.String"
+		resultType="FBdto">
+SELECT SEQ, U_ID, TITLE, CONTENT, F_NAME, REGDATE, READCOUNT, B_TYPE
+FROM POSTBOARD
+WHERE SEQ=#{seq}
+</select>
+
+
+<!-- 답글(UPDATE) -->
+<update id="replyUp" parameterType="FBdto">
+UPDATE POSTBOARD
+SET STEP=STEP+1
+WHERE REFER = (SELECT REFER FROM POSTBOARD WHERE SEQ=#{seq})
+AND STEP > (SELECT STEP FROM POSTBOARD WHERE SEQ=#{seq})
+</update>
+
+
+<!-- 답글 (INSERT) -->
+<insert id="replyIn" parameterType="FBdto">
+INSERT INTO POSTBOARD
+(SEQ, U_ID, TITLE, CONTENT, REFER, STEP, DEPTH, DELFLAG, REGDATE, READCOUNT,B_TYPE)
+VALUES(POSTBOARD_SEQ.NEXTVAL, #{u_id}, #{title}, #{content}, (SELECT REFER FROM POSTBOARD 
+WHERE SEQ=#{seq}), (SELECT STEP+1 FROM POSTBOARD WHERE SEQ = #{seq}), 
+(SELECT DEPTH+1 FROM POSTBOARD WHERE SEQ=#{seq}),'N',SYSDATE,0,#{b_type})
+</insert>
+
+
+<!-- 조회수 증가 -->
+<update id="readcount" parameterType="java.lang.String">
+UPDATE POSTBOARD
+SET READCOUNT = READCOUNT +1
+WHERE SEQ=#{seq}
+</update>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </mapper>

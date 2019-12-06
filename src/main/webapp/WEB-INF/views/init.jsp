@@ -15,5 +15,10 @@
 
 <h2><a href="./reser.do">예약</a></h2>
 
+<a href="./freeboard.do?selEtc=F">자유게시판</a>
+<a href="./reviewboard.do?selEtc=R">후기게시판</a>
+<a href="./noticeboard.do?selEtc=A">공지게시판</a>
+<a href="./hongboard.do">병원정보게시판</a>
+
 </body>
 </html>
