@@ -1,5 +1,86 @@
 package com.min.edu.model.FreeBoard;
 
-public class FB_IServiceImpl implements FB_IService {
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.min.edu.dto.FreeBoard_Dto;
+
+@Service
+public class FB_IServiceImpl implements FB_IService{
+
+	private Logger log = LoggerFactory.getLogger(FB_IServiceImpl.class);
+	
+	@Autowired
+	private FB_IDao dao;
+	
+	
+	@Override
+	public boolean insertBoard(FreeBoard_Dto dto) {
+		log.info("insertBoard 글작성, {}", dto);
+		return dao.insertBoard(dto);
+	}
+
+	@Override
+	public boolean modifyBoard(FreeBoard_Dto dto) {
+		log.info("modifyBoard 글 수정, {}", dto);
+		return dao.modifyBoard(dto);
+	}
+
+	@Override
+	public boolean delBoard(String seq) {
+		log.info("delBoard 단일 삭제, {}", seq);
+		return dao.delBoard(seq);
+	}
+
+	@Override
+	public boolean delflagBoard(Map<String, String[]> map) {
+		log.info("delflagBoard 다중 삭제, {}", map);
+		return dao.delflagBoard(map);
+	}
+
+	@Override
+	public List<FreeBoard_Dto> searchTitle(String title) {
+		log.info("searchTitle 제목검색, {}", title);
+		return dao.searchTitle(title);
+	}
+
+	@Override
+	public List<FreeBoard_Dto> searchId(String id) {
+		log.info("searchId 제목검색, {}", id);
+		return dao.searchId(id);
+	}
+
+	@Override
+	public List<FreeBoard_Dto> allBoard(String selEtc) {
+		log.info("allBoard 글 전체 보기, {}", new Date());
+		return dao.allBoard(selEtc);
+	}
+
+	@Override
+	public FreeBoard_Dto detailBoard(String seq) {
+		log.info("detailBoard 상세글보기, {}", seq);
+		dao.readcount(seq);
+		return dao.detailBoard(seq);
+	}
+
+	@Override
+	public boolean replyBoard(FreeBoard_Dto dto) {
+		log.info("replyBoard 답글작성, {}", dto);
+		boolean iscU = dao.replyUp(dto);
+		boolean iscI = dao.replyIn(dto);
+		return iscI ? true:false;
+	}
+
+	@Override
+	public void readcount(String seq) {
+		log.info("readcount 조회수 증가, {}", seq);
+		dao.readcount(seq);
+		
+	}
 }
