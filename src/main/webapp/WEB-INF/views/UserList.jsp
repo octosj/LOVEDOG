@@ -42,12 +42,12 @@
 		%>
 			<tr>
 				<td>
-				<a href="mainOne.do?id=<%=dto.getU_id()%>">
+				<a href="./mainOne.do?id=<%=dto.getU_id()%>">
 				<%=dto.getU_id()%>
 				</a>
 				</td>
 				<td><%=dto.getU_password()%></td>
-				<td><%=dto.getF_name()%></td>
+				<td><%=dto.getU_name()%></td>
 				<td><%=dto.getU_email()%></td>
 				<td><%=dto.getU_phone()%></td>
 				<td><%=dto.getU_enable()%></td>
