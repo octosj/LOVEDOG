@@ -22,25 +22,21 @@
 %>
 <body>
 	<div>
+	<h2><%=dto.getU_id()%>님 정말 탈퇴하시겠습니까?</h2>
 		<table>
 			<tr>
-				<th><input type="checkbox" name="checkbox" onclick="Check()"></th>
-				<th>아이디</th>
-				<th>이름</th>
-				<th>이메일</th>
-				<th>전화번호</th>
-				<th>삭제 여부</th>
-			</tr>
-			
-			<tr>
-				<td><input type="checkbox" name="chk" value="<%=dto.getU_id() %>"></td>
-				<td><%=dto.getU_id()%></td>
-				<td><%=dto.getU_name()%></td>
-				<td><%=dto.getU_email()%></td>
-				<td><%=dto.getU_phone()%></td>
-				<td><%=dto.getU_enable()%></td>
+				<th>비밀번호 입력</th>
+				<td>
+					<input type="password" id="password" value="<%=dto.getU_password()%>">
+				</td>
 			</tr>
 		</table>
+		<tr>
+			<td>
+				<input type="button" value="취소">
+				<input type="submit" value="탈퇴">
+			</td>
+		</tr>
 	</div>
 </body>
 </html>

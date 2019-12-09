@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<div>
+		<img alt="돌아가기" src="">
+		<h2 align="right">병원 정보 게시판</h2>
+	</div>
 	<h1>수정 화면</h1>
 	<div>
 		<form action="./modifyUser.do" method="post">
@@ -32,7 +36,6 @@
 			<tr>
 				<td>
 					<input type="submit" value="작성 완료">
-					<input type="reset" value="초기화">
 				</td>
 			</tr>
 		</form>
