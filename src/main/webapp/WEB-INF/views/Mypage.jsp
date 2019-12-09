@@ -7,7 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<div>
+		<img alt="프로필 사진" src="">
+	</div>
 	<div>
 		<table>
 			<tr>
