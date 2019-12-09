@@ -597,11 +597,13 @@ opacity
 
 @media ( min-width : 744px) {
 	._b9jscop {
-		background: #ffffff !important;
+  		background-color: white;
 		border-radius: 4px !important;
 		width: 508px !important;
 		padding: 32px !important;
-		margin-bottom: 16px !important;
+/* 		margin-bottom: 16px !important; */
+/* 		margin-left: 10px; */
+/* 		margin-top: 50px; */
 	}
 }
 
@@ -723,26 +725,26 @@ opacity
 }
 
 ._qwxfmx4 {
-	-webkit-box-pack: end !important;
-	-ms-flex-pack: end !important;
-	display: -webkit-box !important;
-	display: -moz-box !important;
-	display: -ms-flexbox !important;
-	display: -webkit-flex !important;
-	display: flex !important;
-	-webkit-justify-content: flex-end !important;
-	justify-content: flex-end !important;
-	background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.224) 0%,
-		rgba(0, 0, 0, 0) 100%) !important;
-	background: -moz-linear-gradient(180deg, rgba(0, 0, 0, 0.224) 0%,
-		rgba(0, 0, 0, 0) 100%) !important;
-	background: linear-gradient(180deg, rgba(0, 0, 0, 0.224) 0%,
-		rgba(0, 0, 0, 0) 100%) !important;
+ 	-webkit-box-pack: end !important; 
+ 	-ms-flex-pack: end !important; 
+ 	display: -webkit-box !important; 
+ 	display: -moz-box !important; 
+ 	display: -ms-flexbox !important; 
+ 	display: -webkit-flex !important; 
+ 	display: flex !important; 
+ 	-webkit-justify-content: flex-end !important; 
+ 	justify-content: flex-end !important; 
+/*  	background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.224) 0%,  */
+/*  		rgba(0, 0, 0, 0) 100%) !important;  */
+/* 	background: -moz-linear-gradient(180deg, rgba(0, 0, 0, 0.224) 0%, */
+/* 		rgba(0, 0, 0, 0) 100%) !important; */
+/* 	background: linear-gradient(180deg, rgba(0, 0, 0, 0.224) 0%, */
+/* 		rgba(0, 0, 0, 0) 100%) !important; */
 }
 
 @media ( max-width : 743px) {
 	._qwxfmx4 {
-		background: none !important;
+		background-color:  #ffe6e6;
 	}
 }
 
@@ -766,7 +768,7 @@ opacity
 
 ._3fec4mm {
 	height: 100% !important;
-	color: #ffffff !important;
+	color: #ffb3b3 !important;
 	line-height: 64px !important;
 	display: inline-block !important;
 	border-bottom: 2px solid transparent !important;
@@ -2693,7 +2695,7 @@ supports (--custom: properties ){ .
 
 
 <link
-	href="https://cdn.datahc.com/Styles/StyleSheet.ashx?key=Main&cdn=1.0.2019.339003-Cfb0e1b2ebf40c499036817db83ad5d92e36f4b37"
+	href="./css/resercss.css"
 	rel="stylesheet" type="text/css" />
 <link
 	href="https://cdn.datahc.com/Styles/StyleSheet.ashx?key=Homepage&cdn=1.0.2019.339003-Cfb0e1b2ebf40c499036817db83ad5d92e36f4b37"
@@ -2712,153 +2714,7 @@ supports (--custom: properties ){ .
 	content="HotelsCombined.co.kr, 호텔 가격 비교, 숙소 예약, 국내 호텔, 국내 여행 숙소, 국내 여행 호텔, 국내 호텔 추천, 서울 호텔 추천, 부산 호텔 추천, 제주 호텔 추천, 인천 호텔 추천, 서울 숙소 추천, 부산 숙소 추천, 제주 숙소 추천, 인천 숙소 추천, 국내 인기 호텔, 제주 여행 숙소, 부산 여행 숙소, 제주 여행 호텔, 부산 여행 호텔, 국내 유명호텔, 국내 브랜드 호텔 추천, 국내 체인 호텔 추천,해외 숙소 예약, 해외 여행 숙소, 해외 여행 호텔, 해외 호텔, 일본 호텔 추천, 유럽 호텔 추천, 하와이 호텔 추천, 베트남 호텔 추천, 방콕 호텔 추천, 홍콩 호텔 추천, 미국 호텔, 다낭 호텔 추천, 대만 호텔 추천, 해외 인기 호텔, 해외 유명호텔, 해외 브랜드 호텔 추천, 해외 체인 호텔 추천, 외국 호텔, 외국 호텔 예약,호캉스, 모캉스, 가성비 호텔, 가심비 호텔, 가성비 숙소, 가심비 숙소, 가성비 호텔 추천, 가심비 호텔 추천, 오션뷰 호텔, 오션뷰 숙소, 수영장 호텔, 스파 호텔, 스파 펜션, 독채 펜션, 특급호텔, 5성급호텔, 비즈니스호텔, 호텔 파티룸, 모텔 파티룸, 호텔 조식, 호텔 패키지, 애견동반 호텔, 애견동반 숙소, 애견동반 펜션, 주말 여행, 주말 숙박, 평일 숙박, 신혼 여행 숙소, 주말 여행 숙소, 주말 여행 호텔, 가족 여행 호텔, 가족 여행 숙소, 우정 여행 호텔, 우정 여행 숙소, 출장 호텔 예약, 비즈니스 호텔 예약, 휴가지 숙소 추천, 관광지 숙소, 단체 여행 숙소, 나홀로 여행 숙소, 5성급 호텔 추천, 럭셔리 호텔 추천, 고급 호텔 추천,할인 호텔, 호텔 할인, 호텔 할인 정보, 최저가 호텔, 저렴한 호텔, 저렴한 리조트, 저렴한 풀빌라, 저렴한 모텔, 실속 호텔, 숙소 할인, 할인 펜션, 모텔 할인, 게스트하우스 할인, 최저가 보장 호텔, 초특가 호텔, 호텔 프로모션, 특가 호텔, 실시간 특가 호텔,호텔검색엔진, 호텔 비교 사이트, 호텔 검색 사이트, 숙박 예약 사이트, 호텔 가격비교 사이트, 호텔 가격비교, 호텔 예약 사이트, 숙소 예약 사이트, 숙소 예약, 호텔 후기 사이트, 실시간 특가 호텔 예약, 할인 숙소 예약, 호텔 검색, 전세계 호텔 가격 비교 서비스, 호텔 예약,호텔 최저가, 호텔 비교, 호텔 가격, 호텔 실시간 비교, 온라인 호텔 예약, 최저가 예약, 호텔 할인, 저렴한 호텔, 국내 여행, 해외 여행, 여행 숙소, 숙소 예약, 최저가 숙소, 온라인 숙소 비교, 숙소 할인, 저렴하게 숙박, 숙소 가격 비교, 객실 예약, 숙소 예약 사이트, 예약 사이트 비교, 최저가 예약, 호텔 가격 비교 사이트, 호텔 예약 비교," />
 <meta name="description"
 	content="국내외 주요 여행사이트의 가격을 모아 한눈에 비교하고 최저가로 예약하세요 – HotelsCombined.co.kr" />
-<link rel="shortcut icon" type="image/x-icon"
-	href="./image/main-icon2.png" />
-<link rel="canonical" href="https://www.hotelscombined.co.kr/" />
-<link rel="alternate"
-	href="android-app://com.hotelscombined.mobile/hotelscombined/www.hotelscombined.co.kr/" />
-<link rel="alternate"
-	href="ios-app://378011496/hotelscombined/www.hotelscombined.co.kr/" />
-<link rel="alternate" hreflang="ar"
-	href="https://ar.hotelscombined.com/" />
-<link rel="alternate" hreflang="ca"
-	href="https://www.hotelscombined.cat/" />
-<link rel="alternate" hreflang="cs"
-	href="https://www.hotelscombined.cz/" />
-<link rel="alternate" hreflang="da"
-	href="https://www.hotelscombined.dk/" />
-<link rel="alternate" hreflang="de"
-	href="https://www.hotelscombined.de/" />
-<link rel="alternate" hreflang="de-AT"
-	href="https://www.hotelscombined.at/" />
-<link rel="alternate" hreflang="de-CH"
-	href="https://www.hotelscombined.ch/" />
-<link rel="alternate" hreflang="el"
-	href="https://www.hotelscombined.gr/" />
-<link rel="alternate" hreflang="en"
-	href="https://www.hotelscombined.com/" />
-<link rel="alternate" hreflang="en-AE"
-	href="https://www.hotelscombined.ae/" />
-<link rel="alternate" hreflang="en-AU"
-	href="https://www.hotelscombined.com.au/" />
-<link rel="alternate" hreflang="en-CA"
-	href="https://www.hotelscombined.ca/" />
-<link rel="alternate" hreflang="en-GB"
-	href="https://www.hotelscombined.co.uk/" />
-<link rel="alternate" hreflang="en-IE"
-	href="https://www.hotelscombined.ie/" />
-<link rel="alternate" hreflang="en-IN"
-	href="https://www.hotelscombined.in/" />
-<link rel="alternate" hreflang="en-NZ"
-	href="https://www.hotelscombined.co.nz/" />
-<link rel="alternate" hreflang="en-SG"
-	href="https://www.hotelscombined.com.sg/" />
-<link rel="alternate" hreflang="en-ZA"
-	href="https://www.hotelscombined.co.za/" />
-<link rel="alternate" hreflang="es"
-	href="https://www.hotelscombined.es/" />
-<link rel="alternate" hreflang="es-AR"
-	href="https://www.detectahotel.com.ar/" />
-<link rel="alternate" hreflang="es-BO"
-	href="https://www.detectahotel.com/" />
-<link rel="alternate" hreflang="es-CL"
-	href="https://www.detectahotel.com/" />
-<link rel="alternate" hreflang="es-CO"
-	href="https://www.detectahotel.com/" />
-<link rel="alternate" hreflang="es-CR"
-	href="https://www.detectahotel.com/" />
-<link rel="alternate" hreflang="es-DO"
-	href="https://www.detectahotel.com/" />
-<link rel="alternate" hreflang="es-EC"
-	href="https://www.detectahotel.com/" />
-<link rel="alternate" hreflang="es-GT"
-	href="https://www.detectahotel.com/" />
-<link rel="alternate" hreflang="es-HN"
-	href="https://www.detectahotel.com/" />
-<link rel="alternate" hreflang="es-MX"
-	href="https://www.detectahotel.com/" />
-<link rel="alternate" hreflang="es-NI"
-	href="https://www.detectahotel.com/" />
-<link rel="alternate" hreflang="es-PA"
-	href="https://www.detectahotel.com/" />
-<link rel="alternate" hreflang="es-PE"
-	href="https://www.detectahotel.com/" />
-<link rel="alternate" hreflang="es-PR"
-	href="https://www.detectahotel.com/" />
-<link rel="alternate" hreflang="es-PY"
-	href="https://www.detectahotel.com/" />
-<link rel="alternate" hreflang="es-SV"
-	href="https://www.detectahotel.com/" />
-<link rel="alternate" hreflang="es-UY"
-	href="https://www.detectahotel.com/" />
-<link rel="alternate" hreflang="es-VE"
-	href="https://www.detectahotel.com/" />
-<link rel="alternate" hreflang="et"
-	href="https://www.hotelscombined.ee/" />
-<link rel="alternate" hreflang="fi"
-	href="https://www.hotelscombined.fi/" />
-<link rel="alternate" hreflang="fr"
-	href="https://www.hotelscombined.fr/" />
-<link rel="alternate" hreflang="he"
-	href="https://www.hotelscombined.co.il/" />
-<link rel="alternate" hreflang="hu"
-	href="https://hu.hotelscombined.com/" />
-<link rel="alternate" hreflang="id"
-	href="https://www.hotelscombined.co.id/" />
-<link rel="alternate" hreflang="it"
-	href="https://www.hotelscombined.it/" />
-<link rel="alternate" hreflang="ja"
-	href="https://www.hotelscombined.jp/" />
-<link rel="alternate" hreflang="ko"
-	href="https://www.hotelscombined.co.kr/" />
-<link rel="alternate" hreflang="lt"
-	href="https://www.hotelscombined.lt/" />
-<link rel="alternate" hreflang="lv"
-	href="https://www.hotelscombined.lv/" />
-<link rel="alternate" hreflang="ms"
-	href="https://www.hotelscombined.my/" />
-<link rel="alternate" hreflang="nl"
-	href="https://www.hotelscombined.nl/" />
-<link rel="alternate" hreflang="nl-BE"
-	href="https://www.hotelscombined.be/" />
-<link rel="alternate" hreflang="no"
-	href="https://www.hotelscombined.no/" />
-<link rel="alternate" hreflang="pl"
-	href="https://www.hotelscombined.pl/" />
-<link rel="alternate" hreflang="pt"
-	href="https://www.hotelscombined.pt/" />
-<link rel="alternate" hreflang="pt-BR"
-	href="https://www.detectahotel.com.br/" />
-<link rel="alternate" hreflang="ro"
-	href="https://ro.hotelscombined.com/" />
-<link rel="alternate" hreflang="ru" href="https://www.roomguru.ru/" />
-<link rel="alternate" hreflang="sk"
-	href="https://www.hotelscombined.sk/" />
-<link rel="alternate" hreflang="sl"
-	href="https://www.hotelscombined.si/" />
-<link rel="alternate" hreflang="sr"
-	href="https://www.hotelscombined.rs/" />
-<link rel="alternate" hreflang="sv"
-	href="https://www.hotelscombined.se/" />
-<link rel="alternate" hreflang="th"
-	href="https://www.hotelscombined.co.th/" />
-<link rel="alternate" hreflang="tl"
-	href="https://www.hotelscombined.com.ph/" />
-<link rel="alternate" hreflang="tr"
-	href="https://www.hotelscombined.com.tr/" />
-<link rel="alternate" hreflang="uk-UA" href="https://www.roomguru.com/" />
-<link rel="alternate" hreflang="vi"
-	href="https://www.hotelscombined.vn/" />
-<link rel="alternate" hreflang="zh-Hans" href="https://hotels.biyi.cn/" />
-<link rel="alternate" hreflang="zh-Hans"
-	href="https://zh.hotelscombined.com/" />
-<link rel="alternate" hreflang="zh-Hant"
-	href="https://www.hotelscombined.com.tw/" />
-<link rel="alternate" hreflang="zh-Hant-HK"
-	href="https://www.hotelscombined.hk/" />
-<meta property="og:type" content="website" />
-<!-- <meta property="og:description" -->
-<!-- 	content="국내외 주요 여행사이트의 가격을 모아 한눈에 비교하고 최저가로 예약하세요 – HotelsCombined.co.kr" /> -->
+
 <meta property="og:site_name" content="HotelsCombined" />
 <meta property="og:title" content="한번에 검색, 한번에 예약!" />
 <!-- <meta property="og:image" -->
@@ -2873,8 +2729,8 @@ supports (--custom: properties ){ .
 
 
 <script type="text/javascript"
-	src="https://cdn.datahc.com/Script/Bundles/Master?v=3r1W33SUgzay0rRd635XMuRhqHin7pvVPg0g-P_2Pvc1
-&cdn=1.0.2019.339003-Cfb0e1b2ebf40c499036817db83ad5d92e36f4b37"></script>
+	src="./js/reser.js"></script>
+
 
 <script type="text/javascript">
     HC.gLanguageCode = 'KO';
@@ -2940,7 +2796,7 @@ supports (--custom: properties ){ .
 	HC.DateSelection.setCulture('ko');
 	HC.DateSelection.init(HC._currentServerTime, '[Day]일', '[Year]년 [MonthNo]월');
 	HC.Translations.set([
-		['DatedropdownMonthYearFormat', '[InsertMonthName] \u0027[InsertShortYear]'],
+// 		['DatedropdownMonthYearFormat', '[InsertMonthName] \u0027[InsertShortYear]'],
 		['DatedropdownMonth', '-월'],
 		['DatedropdownDay', '-일'],
 		['DatedropdownMonthYearlongformat', '[insertyear]년 [insertmonthname]'],
@@ -3179,19 +3035,28 @@ supports (--custom: properties ){ .
 		'\u003cp class=\u0027hc_info\u0027\u003e\u003cspan class=\u0027hc_icon\u0027\u003e참고\u003c/span\u003e\u003cem\u003e[InsertMessage]\u003c/em\u003e\u003c/p\u003e');
 </script>
 
-
+<style type="text/css">
+.bimg{
+	height: 600px;
+	width: 1200px;
+	background-color: #ffe6e6;
+}
+._qwxfmx4{
+	background-color:  #ffe6e6;
+}
+</style>
 
 
 
 
 
 </head>
-
+<body>
 <script>
 	HC.Breakpoints.init();
 </script>
-
-
+<jsp:include page="header.jsp"></jsp:include>
+<div class="bimg">
 
 
 
@@ -3578,7 +3443,7 @@ HC.Common.analyticsTrackVisitor();
 <div class="_b9jscop">
 	<div class="_sl0cwqh">
 		<section>
-			<h1 tabindex="-1" class="_14i3z6h">에어비앤비에서 숙소, 호텔 등을 예약하세요.</h1>
+			<h1 tabindex="-1" class="_14i3z6h">예약 검색을 하세요.</h1>
 		</section>
 	</div>
 	<div class="_h69t7tv">
@@ -3589,7 +3454,7 @@ HC.Common.analyticsTrackVisitor();
 				<div class="_1k4ljpv">
 					<div data-arrive-module-id="mc-autocomplete-module">
 						<div style="margin-bottom: 8px">
-							<span class="_1ep1f1h7">목적지</span>
+							<span class="_1ep1f1h7">병원 제목</span>
 						</div>
 						<div data-arrive-module-id="auto-complete">
 							<div class="_gor68n">
@@ -3604,7 +3469,7 @@ HC.Common.analyticsTrackVisitor();
 															<input type="text" autocomplete="off"
 																aria-autocomplete="list" aria-expanded="false"
 																aria-haspopup="true" class="_1mcoxpnl"
-																id="lp-geocomplete" name="query" placeholder="모든 위치"
+																id="lp-geocomplete" name="query" placeholder="병원 이름"
 																role="combobox" value="" aria-owns="awesomplete_list_1">
 															<ul hidden="" role="listbox" id="awesomplete_list_1"></ul>
 <!-- 														</div> -->
@@ -3624,7 +3489,7 @@ HC.Common.analyticsTrackVisitor();
 					</div>
 				</div>
 				 <div class="hc_f_t_date3 hc_f_checkin">
-                <label for="hc_f_id_checkin_1">체크인</label>
+                <label for="hc_f_id_checkin_1">예약 날짜</label>
 
 <div id="HC_DateSelection_checkin_1">
         <input class="hc_f_i_cal" type="hidden" data-track-kayak="search-box/hc_searchBox/checkin-calender"/><div class="hc_f_t_s3 hc_f_month">
@@ -3651,7 +3516,7 @@ HC.Common.analyticsTrackVisitor();
 
 
 <div class="hc_f_t_date5 hc_f_checkin" data-section="checkin" style="display:none;">
-    <label for="hc_f_id_checkin_1_1">체크인</label>
+    <label for="hc_f_id_checkin_1_1">예약 날짜</label>
     <img data-action="showDatePicker" src="https://cdn.datahc.com/Images/hc_calendar_button.gif?cdn=1.0.2019.339003-Cfb0e1b2ebf40c499036817db83ad5d92e36f4b37" />
     <div class="hc_f_t_i2 hc_f_day">
         <input id="hc_f_id_checkin_1_1" data-element="cal_input" readonly="readonly" />
@@ -3674,11 +3539,16 @@ HC.Common.analyticsTrackVisitor();
     <label for="hc_f_id_guestsRooms_1">
 <!--         <span>인원</span> -->
         <select name="hc_f_id_guestsRooms_" id="hc_f_id_guestsRooms_1" class="hc_evt_roomsGuests">
-<!--             <option value="1-1" data-icon="adult">성인 1인</option> -->
-<!--             <option value="2-1" data-icon="adults">성인 2인</option> -->
-<!--             <option value="0" data-icon="family">가족</option> -->
-<!--             <option value="1" data-icon="group">단체</option> -->
+
         </select>
+    </label>
+</div>
+<div class="hc-roomsselectmenu   hc_f_guestsRooms" data-track-kayak="search-box/hc_searchBox/room-config-click">
+    <label for="hc_f_id_guestsRooms_1-button">
+<!--         <span>인원</span> -->
+        <select name="hc_f_id_guestsRooms_" id="hc_f_id_guestsRooms_1" class="hc_evt_roomsGuests" style="display: none;">
+
+        </select><span class="hc-roomsselectmenu__button" tabindex="0" id="hc_f_id_guestsRooms_1-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="hc_f_id_guestsRooms_1-menu" aria-haspopup="true" style="width: 26px;"><span class="hc-roomsselectmenu__buttonicon ui-icon-triangle-1-s"></span><span class="hc-roomsselectmenu__buttontext">&nbsp;</span></span>
     </label>
 </div>
 
@@ -3712,7 +3582,7 @@ HC.Common.analyticsTrackVisitor();
 </div>
 
 
-
+</div>
 
 </body>
 
