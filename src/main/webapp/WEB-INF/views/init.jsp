@@ -3,7 +3,7 @@
 <html>
 <head>
 
-<title>인덱스 화면입니다. =]</title>
+<title>인덱스 화면입니다.</title>
 </head>
 <body background='./image/mainimage.jpg'>
 <h2>
