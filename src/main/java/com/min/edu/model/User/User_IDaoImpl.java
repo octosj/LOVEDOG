@@ -32,8 +32,8 @@ public class User_IDaoImpl implements User_IDao {
 
 	@Override
 	public boolean AuthChange(Map<String, String> map) {
-		int n = session.update(NS+"AuthChange", map);
-		return false;
+		int n =session.update(NS+"AuthChange", map);
+		return (n > 0)?true : false;
 	}
 
 	@Override

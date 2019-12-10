@@ -1,7 +1,9 @@
 package com.min.edu.ctrl;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -12,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.min.edu.dto.User_Dto;
 import com.min.edu.model.User.User_IService;
@@ -49,14 +52,9 @@ public class UserController {
 		return "UserOneList";
 	}
 	@RequestMapping(value = "/delete.do", method = RequestMethod.GET)
-	public String delete() {
-		log.info("delete 회원 삭제 / 탈퇴 페이지 이동", new Date());
-		return "DeleteForm";
-	}
-	@RequestMapping(value = "/delete.do", method = RequestMethod.POST)
 	public String delete(HttpSession session) {
 		log.info("delete 회원 삭제 / 탈퇴", new Date());
-		User_Dto dto = (User_Dto) session.getAttribute("LDto");
+		User_Dto dto = (User_Dto) session.getAttribute("Dto");
 		boolean isc = service.DeleteUser(dto.getU_id());
 		return isc?"redirect:/Mypage.do":"redirect:/delete.do";
 	}
