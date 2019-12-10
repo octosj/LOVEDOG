@@ -1,5 +1,44 @@
 package com.min.edu.model.User;
 
-public class User_IDaoImpl implements User_IDao {
+import java.util.List;
+import java.util.Map;
 
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.min.edu.dto.User_Dto;
+@Repository
+public class User_IDaoImpl implements User_IDao {
+	
+	private final String NS = "sarang.hagae.";
+	@Autowired
+	private SqlSessionTemplate session;
+
+	@Override
+	public int DeleteUser(String u_id) {
+		return session.update(NS+"DeleteUser", u_id);
+	}
+
+	@Override
+	public List<User_Dto> SelectAlluser() {
+		return session.selectList(NS+"SelectAlluser");
+	}
+
+	@Override
+	public User_Dto SelectOneuser() {
+		return session.selectOne(NS+"SelectOneuser");
+	}
+
+	@Override
+	public boolean AuthChange(Map<String, String> map) {
+		int n = session.update(NS+"AuthChange", map);
+		return false;
+	}
+
+	@Override
+	public boolean UserModify(User_Dto dto) {
+		int n = session.update(NS+"UserModify", dto);
+		return (n>0)?true:false;
+	}
 }
