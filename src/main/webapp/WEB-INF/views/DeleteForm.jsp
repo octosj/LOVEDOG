@@ -18,25 +18,27 @@
 </style>
 </head>
 <%
-	User_Dto dto =(User_Dto) request.getAttribute("dto");
+	User_Dto dto = (User_Dto) request.getAttribute("Dto");
 %>
 <body>
-	<div>
-	<h2><%=dto.getU_id()%>님 정말 탈퇴하시겠습니까?</h2>
-		<table>
+	<form action="./delete.do" method="post">
+		<div>
+		<h2><%=dto.getU_id()%>님 정말 탈퇴하시겠습니까?</h2>
+			<table>
+				<tr>
+					<th>비밀번호 입력</th>
+					<td>
+						<input type="password" id="password" value="<%=dto.getU_password()%>">
+					</td>
+				</tr>
+			</table>
 			<tr>
-				<th>비밀번호 입력</th>
-				<td>
-					<input type="password" id="password" value="<%=dto.getU_password()%>">
+				<td >
+					<input type="button" value="취소" onclick="Cancel()">
+					<input type="submit" value="탈퇴">
 				</td>
 			</tr>
-		</table>
-		<tr>
-			<td>
-				<input type="button" value="취소">
-				<input type="submit" value="탈퇴">
-			</td>
-		</tr>
-	</div>
+		</div>
+	</form>
 </body>
 </html>
