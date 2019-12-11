@@ -52,6 +52,16 @@
 		</div>
 	</div>
 
-	
+	<script type="text/javascript">
+		function deleteForm() {
+// 			alert("작동");
+			location.href="./delete.do";
+		}
+		
+		function UserModify() {
+// 			alert("ok");
+			
+		}
+	</script>
 </body>
 </html>
