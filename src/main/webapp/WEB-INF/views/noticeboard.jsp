@@ -17,7 +17,7 @@
          text-align:center;
          padding:4px;
       }
-      
+        
    th{background-color:skyblue;}
 </style>
 </head>
@@ -55,6 +55,7 @@
          <th>b_type</th>
       </tr>
    </thead>
+
 
    <%for(FreeBoard_Dto dto : lists){%>
    <tbody>
