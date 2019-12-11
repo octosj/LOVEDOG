@@ -45,9 +45,9 @@ public class UserController {
 		return "UserList";
 	}
 	@RequestMapping(value = "/mainOne.do", method = RequestMethod.GET)
-	public String UserOneList(Model model) {
-		log.info("UserOneList 회원 상세 조회 페이지 이동", new Date());
-		User_Dto dto = service.SelectOneuser();
+	public String UserOneList(Model model, String u_id) {
+		User_Dto dto = service.SelectOneuser(u_id);
+		log.info("UserOneList 회원 상세 조회 페이지 이동 \t {}", dto);
 		model.addAttribute("dto", dto);
 		return "UserOneList";
 	}
@@ -65,5 +65,11 @@ public class UserController {
 		boolean isc = service.UserModify(dto);
 		return isc? "redirect:/Mypage.do":"redirect:/modifyUser.do";
 	}
-	
+	@RequestMapping(value = "/modifyUserForm.do", method = RequestMethod.GET)
+	public String modifyUserForm(User_Dto dto, Model model) {
+		log.info("modifyUserForm 회원 수정 페이지 이동", new Date());
+		boolean isc = service.UserModify(dto);
+		model.addAttribute("isc", isc);
+		return isc?"redifect:/UserModify.do":"redirect:/index.do";
+	}
 }
