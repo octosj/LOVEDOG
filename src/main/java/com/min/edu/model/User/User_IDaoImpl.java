@@ -26,14 +26,14 @@ public class User_IDaoImpl implements User_IDao {
 	}
 
 	@Override
-	public User_Dto SelectOneuser() {
-		return session.selectOne(NS+"SelectOneuser");
+	public User_Dto SelectOneuser(String u_id) {
+		return session.selectOne(NS+"SelectOneuser",u_id);
 	}
 
 	@Override
 	public boolean AuthChange(Map<String, String> map) {
-		int n = session.update(NS+"AuthChange", map);
-		return false;
+		int n =session.update(NS+"AuthChange", map);
+		return (n > 0)?true : false;
 	}
 
 	@Override

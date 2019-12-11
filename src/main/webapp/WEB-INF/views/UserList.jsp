@@ -41,13 +41,13 @@
 			for(User_Dto dto : lists){
 		%>
 			<tr>
-				<td>
-				<a href="mainOne.do?id=<%=dto.getU_id()%>">
+				<td>	
+				<a href="mainOne.do?u_id=<%=dto.getU_id()%>">
 				<%=dto.getU_id()%>
 				</a>
 				</td>
 				<td><%=dto.getU_password()%></td>
-				<td><%=dto.getF_name()%></td>
+				<td><%=dto.getU_name()%></td>
 				<td><%=dto.getU_email()%></td>
 				<td><%=dto.getU_phone()%></td>
 				<td><%=dto.getU_enable()%></td>
