@@ -44,17 +44,7 @@ public class FB_IServiceImpl implements FB_IService{
 		return dao.delflagBoard(map);
 	}
 
-	@Override
-	public List<FreeBoard_Dto> searchTitle(String title) {
-		log.info("searchTitle 제목검색, {}", title);
-		return dao.searchTitle(title);
-	}
-
-	@Override
-	public List<FreeBoard_Dto> searchId(String id) {
-		log.info("searchId 제목검색, {}", id);
-		return dao.searchId(id);
-	}
+	
 
 	@Override
 	public List<FreeBoard_Dto> allBoard(String selEtc) {

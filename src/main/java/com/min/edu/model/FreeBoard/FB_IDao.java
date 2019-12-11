@@ -19,11 +19,6 @@ public interface FB_IDao {
 	// 다중 삭제
 	public boolean delflagBoard(Map<String, String[]> map);
 	
-	// 글 검색 (제목)
-	public List<FreeBoard_Dto> searchTitle(String title);
-	
-	// 글 검색 (작성자)
-	public List<FreeBoard_Dto> searchId(String id);
 	
 	// 전체 글 보기
 	public List<FreeBoard_Dto> allBoard(String selEtc);

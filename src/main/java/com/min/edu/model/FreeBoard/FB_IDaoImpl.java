@@ -52,15 +52,7 @@ public class FB_IDaoImpl implements FB_IDao{
 		return cnt>0?true:false;
 	}
 
-	@Override
-	public List<FreeBoard_Dto> searchTitle(String title) {
-		return sqlSession.selectList(NS+"searchTitle",title);
-	}
-
-	@Override
-	public List<FreeBoard_Dto> searchId(String id) {
-		return sqlSession.selectList(NS+"searchId",id);
-	}
+	
 
 	@Override
 	public List<FreeBoard_Dto> allBoard(String selEtc) {
