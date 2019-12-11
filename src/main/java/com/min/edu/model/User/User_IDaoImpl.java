@@ -26,8 +26,8 @@ public class User_IDaoImpl implements User_IDao {
 	}
 
 	@Override
-	public User_Dto SelectOneuser() {
-		return session.selectOne(NS+"SelectOneuser");
+	public User_Dto SelectOneuser(String u_id) {
+		return session.selectOne(NS+"SelectOneuser",u_id);
 	}
 
 	@Override
