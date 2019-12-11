@@ -32,9 +32,9 @@ public class User_IServiceImpl implements User_IService {
 	}
 
 	@Override
-	public User_Dto SelectOneuser() {
-		log.info("SelectOneuser 회원 단일 정보 조회 \t {}", new Date());
-		return dao.SelectOneuser();
+	public User_Dto SelectOneuser(String u_id) {
+		log.info("SelectOneuser 회원 단일 정보 조회 \t {}", u_id);
+		return dao.SelectOneuser(u_id);
 	}
 
 	@Override
