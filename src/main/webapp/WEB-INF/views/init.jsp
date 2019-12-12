@@ -26,5 +26,8 @@
 <a href="./noticeboard.do?selEtc=A">공지게시판</a>
 <a href="./hongboard.do">병원정보게시판</a>
 
+<a href="./login.do">로그인게시판</a>
+
+
 </body>
 </html>
