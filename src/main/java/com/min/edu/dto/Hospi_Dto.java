@@ -14,7 +14,7 @@ public class Hospi_Dto implements Serializable{
 	private String u_id     ;
 	private String h_enable ;
 	
-	
+
 	public Hospi_Dto() {
 	}
 	

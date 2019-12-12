@@ -1,21 +1,24 @@
 package com.min.edu.dto;
 
-public class User_Dto {
-//사용자 DTO 
-	 private String u_id;
-	 private String u_password;
-	 private String u_name;
-	 private String u_email;
-	 private int u_phone;
-	 private String u_enable;
-	 private String u_auth;
-	 private String f_name;
-	 
+import java.io.Serializable;
+
+public class User_Dto implements Serializable{
+
+	private static final long serialVersionUID = 497744720329239695L;
+	
+	private String u_id;
+	private String u_password;
+	private String u_name;
+	private String u_email;
+	private String u_phone;
+	private String u_enable;
+	private String u_auth;
+	private String f_name;
+	
 	public User_Dto() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
-	public User_Dto(String u_id, String u_password, String u_name, String u_email, int u_phone, String u_enable,
+	
+	public User_Dto(String u_id, String u_password, String u_name, String u_email, String u_phone, String u_enable,
 			String u_auth, String f_name) {
 		super();
 		this.u_id = u_id;
@@ -56,10 +59,10 @@ public class User_Dto {
 	public void setU_email(String u_email) {
 		this.u_email = u_email;
 	}
-	public int getU_phone() {
+	public String getU_phone() {
 		return u_phone;
 	}
-	public void setU_phone(int u_phone) {
+	public void setU_phone(String u_phone) {
 		this.u_phone = u_phone;
 	}
 	public String getU_enable() {
@@ -80,5 +83,9 @@ public class User_Dto {
 	public void setF_name(String f_name) {
 		this.f_name = f_name;
 	}
-	 
+	
+
+	
+	
+	
 }
