@@ -6,12 +6,13 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.min.edu.dto.Hospi_Dto;
 import com.min.edu.dto.User_Dto;
 
 import oracle.sql.DATE;
-
+@Service
 public class Hospi_IServiceImpl implements Hospi_IService {
 
 	private Logger logger = LoggerFactory.getLogger(Hospi_IServiceImpl.class);

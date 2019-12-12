@@ -9,6 +9,7 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.min.edu.dto.Hospi_Dto;
 import com.min.edu.dto.User_Dto;
@@ -17,6 +18,7 @@ import com.min.edu.dto.User_Dto;
  * @author octo
  *
  */
+@Repository
 public class Hospi_IDaoImpl implements Hospi_IDao {
 
 	@Autowired
