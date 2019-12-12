@@ -14,15 +14,12 @@ public class User_Dto implements Serializable{
 	private String u_enable;
 	private String u_auth;
 	private String f_name;
-	private String h_name;
-	private String h_regi;
-	private String h_phone;
 	
 	public User_Dto() {
 	}
 	
 	public User_Dto(String u_id, String u_password, String u_name, String u_email, String u_phone, String u_enable,
-			String u_auth, String f_name, String h_name, String h_regi, String h_phone) {
+			String u_auth, String f_name) {
 		super();
 		this.u_id = u_id;
 		this.u_password = u_password;
@@ -32,16 +29,11 @@ public class User_Dto implements Serializable{
 		this.u_enable = u_enable;
 		this.u_auth = u_auth;
 		this.f_name = f_name;
-		this.h_name = h_name;
-		this.h_regi = h_regi;
-		this.h_phone = h_phone;
 	}
-	
 	@Override
 	public String toString() {
 		return "User_Dto [u_id=" + u_id + ", u_password=" + u_password + ", u_name=" + u_name + ", u_email=" + u_email
-				+ ", u_phone=" + u_phone + ", u_enable=" + u_enable + ", u_auth=" + u_auth + ", f_name=" + f_name
-				+ ", h_name=" + h_name + ", h_regi=" + h_regi + ", h_phone=" + h_phone + "]";
+				+ ", u_phone=" + u_phone + ", u_enable=" + u_enable + ", u_auth=" + u_auth + ", f_name=" + f_name + "]";
 	}
 	public String getU_id() {
 		return u_id;
@@ -91,25 +83,8 @@ public class User_Dto implements Serializable{
 	public void setF_name(String f_name) {
 		this.f_name = f_name;
 	}
-	public String getH_name() {
-		return h_name;
-	}
-	public void setH_name(String h_name) {
-		this.h_name = h_name;
-	}
-	public String getH_regi() {
-		return h_regi;
-	}
-	public void setH_regi(String h_regi) {
-		this.h_regi = h_regi;
-	}
-	public String getH_phone() {
-		return h_phone;
-	}
-	public void setH_phone(String h_phone) {
-		this.h_phone = h_phone;
-	}
 	
+
 	
 	
 	
