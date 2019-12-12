@@ -16,7 +16,7 @@
 <h2>* * * * 기 능 으 로 가 기 * * * *</h2>
 
 
-<h2><a href=""></a></h2>
+<h2><a href="./reser.do">예약</a></h2>
 
 
 <h1><a href="index.do">User Page 이동</a> </h1>
