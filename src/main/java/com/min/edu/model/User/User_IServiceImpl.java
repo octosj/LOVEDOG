@@ -21,8 +21,7 @@ public class User_IServiceImpl implements User_IService {
 	@Override
 	public boolean DeleteUser(String u_id) {
 		log.info("DeleteUser 회원 삭제 및 탈퇴 \t {}", u_id);
-		int n = dao.DeleteUser(u_id);
-		return (n > 0 )? true:false;
+		return dao.DeleteUser(u_id);
 	}
 
 	@Override

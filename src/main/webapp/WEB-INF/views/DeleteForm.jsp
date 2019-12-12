@@ -32,12 +32,12 @@
 					</td>
 				</tr>
 			</table>
-			<tr>
-				<td >
-					<input type="button" value="취소" onclick="Cancel()">
-					<input type="submit" value="탈퇴">
-				</td>
-			</tr>
+				<tr>
+					<td >
+						<input type="button" value="취소" onclick="Cancel()">
+						<input type="submit" value="탈퇴">
+					</td>
+				</tr>
 		</div>
 	</form>
 </body>
