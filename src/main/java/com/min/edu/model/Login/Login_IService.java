@@ -1,8 +1,13 @@
 package com.min.edu.model.Login;
 
-import org.springframework.stereotype.Service;
+import java.util.Map;
 
-@Service
+import com.min.edu.dto.User_Dto;
+
 public interface Login_IService {
 
+	public User_Dto loginUser(Map<String, String> map);
+	
+	
+	public boolean duplicateidCheck(String id);
 }

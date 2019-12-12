@@ -1,9 +1,5 @@
-/**
- * 
- */
 package com.min.edu.model.Login;
 
-import java.util.List;
 import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -18,29 +14,24 @@ import com.min.edu.dto.User_Dto;
 @Repository
 public class Login_IDaoImpl implements Login_IDao {
 
-	private Logger log = LoggerFactory.getLogger(Login_IDaoImpl.class);
 	private final String NS = "sarang.hagae.";
+	
+	private Logger log = LoggerFactory.getLogger(Login_IDaoImpl.class);
 	
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 	
-
 	@Override
-	public User_Dto loginH(User_Dto dto) {
-		return sqlSession.selectOne(NS+"loginH", dto);
+	public User_Dto loginUser(Map<String, String> map) {
+		log.info("*********[loginU] Dao 접근 시작 {}*********");
+		return sqlSession.selectOne(NS+"loginUser", map);
 	}
-	
+
 	@Override
 	public boolean duplicateidCheck(String id) {
-		int cnt = sqlSession.selectOne(NS+"duplicateidCheck", id);
+		log.info("*********[duplicateidCheck] Dao 접근 시작 {}*********");
+		int cnt = sqlSession.selectOne(NS+"duplicated", id);
 		return cnt==1?false:true;
 	}
-
-	@Override
-	public User_Dto loginU(Map<String, String> map) {
-		return sqlSession.selectOne(NS+"loginU", map);
-	}
-
-
 
 }

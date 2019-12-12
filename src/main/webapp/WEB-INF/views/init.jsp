@@ -29,6 +29,7 @@
 <a href="./reviewboard.do?selEtc=R">후기게시판</a>
 <a href="./noticeboard.do?selEtc=A">공지게시판</a>
 <a href="./hongboard.do">병원정보게시판</a>
+<a href="./login.do">로그인게시판</a>
 >>>>>>> branch 'master' of https://github.com/octosj/LoveDog.git
 
 </body>

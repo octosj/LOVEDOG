@@ -55,8 +55,9 @@
 	</tx:advice>
 
 	<aop:config>
-		<aop:advisor advice-ref="txAdvice"	pointcut="execution(* com.min.edu.model.*Service*.*(..))" />
+		<aop:advisor advice-ref="txAdvice"	pointcut="execution(* com.min.edu.model.*Service*.*(..))"/>
 	</aop:config>
+	
 	
 </beans>
 

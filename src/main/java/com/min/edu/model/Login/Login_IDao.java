@@ -6,12 +6,8 @@ import com.min.edu.dto.User_Dto;
 
 public interface Login_IDao {
 
+	public User_Dto loginUser(Map<String, String> map);
 	
-		public User_Dto loginU(Map<String,String> map);
-		
-		public boolean duplicateidCheck(String id);
-
-		public User_Dto loginH(User_Dto dto);
-
+	public boolean duplicateidCheck(String id);
+	
 }
-
