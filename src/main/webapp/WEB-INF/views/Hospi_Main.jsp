@@ -25,7 +25,6 @@
 <a href="./reviewboard.do?selEtc=R">후기게시판</a>
 <a href="./noticeboard.do?selEtc=A">공지게시판</a>
 <a href="./hongboard.do">병원정보게시판</a>
-<a href="./mainH.do">관리자로그인</a>
 
 </body>
 </html>
