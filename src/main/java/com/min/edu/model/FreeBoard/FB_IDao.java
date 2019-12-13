@@ -19,9 +19,8 @@ public interface FB_IDao {
 	// 다중 삭제
 	public boolean delflagBoard(Map<String, String[]> map);
 	
-	
 	// 전체 글 보기
-	public List<FreeBoard_Dto> allBoard(String selEtc);
+	public List<FreeBoard_Dto> allBoard(String selEtc, String search_option, String keyword);
 	
 	// 상세 글 보기
 	public FreeBoard_Dto detailBoard(String seq);
@@ -34,7 +33,6 @@ public interface FB_IDao {
 	
 	// 조회수 증가
 	public void readcount(String seq);
-	
 	
 }
 
