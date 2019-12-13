@@ -28,19 +28,23 @@
 <div>
 	<table>
 		<tr>
-			<th>U_ID</th>
-			<th>U_PASSWORD</th>
-			<th>U_NAME</th>
-			<th>U_EMAIL</th>
-			<th>U_PHONE</th>
-			<th>U_ENABLE</th>
-			<th>U_AUTH</th>
-			<th>F_NAME</th>
+			<th>
+				<input type="checkbox" onclick="checkAll(this.checked)">
+			</th>
+			<th>아이디</th>
+			<th>이름</th>
+			<th>전화번호</th>
+			<th>이메일</th>
+			<th>권한</th>
 		</tr>
 		<%
 			for(User_Dto dto : lists){
 		%>
+			
 			<tr>
+				<td>
+					<input type="checkbox" name="chk" value="<%=dto.getU_id()%>">
+				</td>
 				<td>	
 				<a href="mainOne.do?u_id=<%=dto.getU_id()%>">
 				<%=dto.getU_id()%>
@@ -50,9 +54,6 @@
 				<td><%=dto.getU_name()%></td>
 				<td><%=dto.getU_email()%></td>
 				<td><%=dto.getU_phone()%></td>
-				<td><%=dto.getU_enable()%></td>
-				<td><%=dto.getU_auth()%></td>
-				<td><%=dto.getF_name()%></td>
 			</tr>
 		<%
 		}
@@ -68,6 +69,13 @@
 <script type="text/javascript">
 	function back() {
 		location.href="index.do";
+	}
+	
+	function checkAll(bool){
+		var chk = document.getElementsByName("chk");
+		for (var i = 0; i < chk.length; i++) {
+			chk[i].checked = bool;
+		}
 	}
 </script>
 </html>

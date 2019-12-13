@@ -3,7 +3,7 @@
 <mapper namespace="sarang.hagae">
 <update id="UserModify" parameterType="Udto">
 UPDATE USER_U
- SET U_PASSWORD=#{u_password}, U_NAME=#{u_name}, U_EMAIL=#{u_email}, U_PHONE=#{u_phone}
+ SET U_ID=#{u_id}, U_PASSWORD=#{u_password}, U_EMAIL=#{u_email}, U_PHONE=#{u_phone}
   WHERE U_ID=#{u_id} AND U_AUTH='U'
 </update>
 
