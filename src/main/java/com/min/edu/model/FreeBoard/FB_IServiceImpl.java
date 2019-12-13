@@ -44,12 +44,11 @@ public class FB_IServiceImpl implements FB_IService{
 		return dao.delflagBoard(map);
 	}
 
-	
-
 	@Override
-	public List<FreeBoard_Dto> allBoard(String selEtc) {
+	public List<FreeBoard_Dto> allBoard(String selEtc, String search_option, String keyword) {
 		log.info("allBoard 글 전체 보기, {}", new Date());
-		return dao.allBoard(selEtc);
+		log.info("selEtc===, {}", selEtc);
+		return dao.allBoard(selEtc, search_option, keyword);
 	}
 
 	@Override
@@ -73,4 +72,5 @@ public class FB_IServiceImpl implements FB_IService{
 		dao.readcount(seq);
 		
 	}
+
 }

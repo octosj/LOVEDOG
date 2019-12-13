@@ -24,7 +24,8 @@
 <body>
 <script type="text/javascript">
 function modifyjs(){
-	location.href="./modifyForm.do?seq="+<%=dto.getSeq()%>;
+//	alert("a");
+	location.href="./modifyForm.do?seq="+<%=dto.getSeq()%> + "&selEtc=" + '<%=dto.getB_type()%>';
 }
 
 function replyjs(){
@@ -33,21 +34,15 @@ function replyjs(){
 }
 
 function deletejs(){
-// 	location.href="./del.do?seq=${dto.seq}&selEtc=F";
-//	var objidx = document.getElementById('selETC');
-
+//	alert("a");
 	location.href="./del.do?seq="+<%=dto.getSeq()%> + "&selEtc=" + '<%=dto.getB_type()%>';
 
 }
 
 
 
-
 </script>
 <table>
-	  <!-- <div>
-   	  	<input type="hidden" name="selETC" id="selETC" onload="selViewD()">
-      </div> -->
 	<tbody>
 		<tr>
 			<th>글 번호</th>

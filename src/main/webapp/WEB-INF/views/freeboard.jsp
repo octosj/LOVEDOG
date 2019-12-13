@@ -24,16 +24,19 @@
 <script type="text/javascript">
 	function selView(){
 		var objidx = document.getElementById('selETC');
-// 		alert(objidx.selectedIndex);
-// 		alert(objidx.options[objidx.selectedIndex].value);
 		location.href="./freeboard.do?selEtc=F";
 		
 	}
 
 	function writeForm(){
-		location.href="./write.do";
+		location.href="./write.do?selEtc=F";
+
 	}
 
+	function main(){
+		location.href="./init.do";
+	}
+	
 </script>
 <body>
 <%
@@ -48,9 +51,9 @@
       <tr>
          <th>seq</th>
          <th>u_id</th>
-         <th>title</th>
+         <th>제목</th>
          <th>regdate</th>
-         <th>readcount</th>
+         <th>조회수</th>
          <th>b_type</th>
       </tr>
    </thead>
@@ -71,6 +74,26 @@
    </tbody>
 
 </table>
+
+<form name="form1" action="./freeboard.do" method="get">
+ 	<input type="hidden" name="selEtc" value="F" />
+    <select name="search_option" style="width: 70px;height: 22px;">
+        <option value="u_id"> 작성자 </option>
+        <option value="title"> 제목 </option>
+        <option value="content"> 내용 </option>
+    </select>
+    <input type="text"  name="keyword" value="${map.keyword}">
+    <input type="submit" value="조회">
+</form>
+
+
+
+
+
+
+
+
 <input type="button" id="Nwrite" value="새글작성" onclick="writeForm()">
+<input type="button" id="main" value="메인으로 가기" onclick="main()">
 </body>
 </html>
