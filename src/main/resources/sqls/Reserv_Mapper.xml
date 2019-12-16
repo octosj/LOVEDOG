@@ -2,74 +2,64 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="sarang.hagae.reser">
 
-<!-- 병원 진료 과 조회 -->
+<!-- 전체 진료 과 조회 -->
 <select id="selectHObj" resultType="Odto" parameterType="java.lang.String">
-	SELECT H_NAME ,OBJ_CONTENT, OBJ_CODE, HL.H_REGI H_REGI
-	FROM HOSPITAL HL JOIN (SELECT H.H_REGI, OBJ_CODE,OBJ_CONTENT  
-	FROM 
-		H_CODE_OBJ H JOIN (SELECT OBJ_CODE, OBJ.OBJ_CONTENT,OC.MAIN_OBJ MAIN_OBJ
-					FROM O_CODE OC JOIN OBJ
-						ON OC.MAIN_OBJ = OBJ.MAIN_OBJ) J
-			ON H.MAIN_OBJ = J.MAIN_OBJ) HC
-	ON HL.H_REGI = HC.H_REGI
-	WHERE HL.H_REGI=#{h_regi}
+   SELECT H_NAME ,OBJ_CONTENT, OBJ_CODE, HL.H_REGI H_REGI
+   FROM HOSPITAL HL JOIN (SELECT H.H_REGI, OBJ_CODE,OBJ_CONTENT  
+   FROM 
+      H_CODE_OBJ H JOIN (SELECT OBJ_CODE, OBJ.OBJ_CONTENT,OC.MAIN_OBJ MAIN_OBJ
+               FROM O_CODE OC JOIN OBJ
+                  ON OC.MAIN_OBJ = OBJ.MAIN_OBJ) J
+         ON H.MAIN_OBJ = J.MAIN_OBJ) HC
+   ON HL.H_REGI = HC.H_REGI
+   WHERE HL.H_REGI=#{h_regi}
 </select>
 
-<!-- 병원 동물 조회 -->
+<!-- 전체 동물 조회 -->
 <select id="selectHAni" resultType="Adto" parameterType="java.lang.String">
-	SELECT H_NAME ,ANI_CONTENT,ANI_CODE,HL.H_REGI
-	FROM HOSPITAL HL JOIN (SELECT H.H_REGI, ANI_CODE,ANI_CONTENT  
-	FROM 
-		H_CODE_ANI H JOIN (SELECT ANI_CODE, ANI.ANI_CONTENT,AC.MAIN_ANI MAIN_ANI
-					FROM A_CODE AC JOIN ANI
-						ON AC.MAIN_ANI = ANI.MAIN_ANI) J
-			ON H.MAIN_ANI = J.MAIN_ANI) HC
-	ON HL.H_REGI = HC.H_REGI
-	WHERE HL.H_REGI=#{h_regi}
+   SELECT H_NAME ,ANI_CONTENT,ANI_CODE,HL.H_REGI
+   FROM HOSPITAL HL JOIN (SELECT H.H_REGI, ANI_CODE,ANI_CONTENT  
+   FROM 
+      H_CODE_ANI H JOIN (SELECT ANI_CODE, ANI.ANI_CONTENT,AC.MAIN_ANI MAIN_ANI
+               FROM A_CODE AC JOIN ANI
+                  ON AC.MAIN_ANI = ANI.MAIN_ANI) J
+         ON H.MAIN_ANI = J.MAIN_ANI) HC
+   ON HL.H_REGI = HC.H_REGI
+   WHERE HL.H_REGI=#{h_regi}
 </select>
 
 <!-- 예약 검색 -->
 <select id="serchReser" parameterType="java.util.Map" resultType="HSPdto">
 SELECT H_REGI,H_ADDRESS,H_MAIL,H_NAME,H_PHONE,OBJ_CODE FROM HOSPITAL JOIN  H_CODE_OBJ
      using(H_REGI)
-    	join(O_CODE)
+       join(O_CODE)
      using(MAIN_OBJ)
-    	JOIN OBJ
+       JOIN OBJ
      using(MAIN_OBJ)
-	WHERE  (H_REGI NOT in (SELECT  H_REGI
-									FROM RESERVATION  
-										WHERE  R_DATE= to_date(#{r_date},'YYYYMMDDHH24MISS')))
-	AND MAIN_OBJ = #{main_obj}
+   WHERE  (H_REGI NOT in (SELECT  H_REGI
+                           FROM RESERVATION  
+                              WHERE  R_DATE= to_date(#{r_date},'YYYYMMDDHH24MISS')))
+   AND MAIN_OBJ = #{main_obj} AND OBJ_DETAIL_CODE = #{obj_detail_code}
 </select>
 
 <!-- 예약 추가 -->
 <insert id="insertReser" parameterType="Rdto">
-	INSERT INTO RESERVATION(SEQ,U_ID,H_REGI,R_STATUS,R_DATE,R_CONTENT)
-	VALUES(RESERVATION_SEQ.NEXTVAL, #{u_id}, #{h_regi}, 'Y',TO_DATE(#{r_date},'yyyymmddhh24miss'),#{r_content})
+   INSERT INTO RESERVATION(SEQ,U_ID,H_REGI,R_STATUS,R_DATE,R_CONTENT)
+   VALUES(RESERVATION_SEQ.NEXTVAL, #{u_id}, #{h_regi}, 'Y',TO_DATE(#{r_date},'yyyymmddhh24miss'),#{r_content})
 </insert>
 
 <!-- 예약 삭제 -->
 <update id="delReser" parameterType="java.util.Map">
-	UPDATE RESERVATION SET R_STATUS='N' WHERE R_STATUS='Y' AND U_ID IN 
-		<foreach collection="u_id_" item="u_id" open="(" separator="," close=")">
-        	 #{u_id}
-		</foreach>
+   UPDATE RESERVATION SET R_STATUS='N' WHERE R_STATUS='Y' AND U_ID IN 
+      <foreach collection="u_id_" item="u_id" open="(" separator="," close=")">
+            #{u_id}
+      </foreach>
 </update>
 
 <!-- 예약 수정 -->
 <update id="modifyReser" parameterType="java.util.Map">
-	UPDATE RESERVATION 
-	SET R_DATE=TO_DATE(#{r_date},'yyyymmddhh24miss'); , 
-	R_CONTENT=#{r_content} WHERE U_ID=#{u_id};
+   UPDATE RESERVATION 
+   SET R_DATE=TO_DATE(#{r_date},'yyyymmddhh24miss'); , 
+   R_CONTENT=#{r_content} WHERE U_ID=#{u_id};
 </update>
-
-<!-- 전체 진료 과 -->
-<select id="selectAllObj" resultType="com.min.edu.dto.AllObj_Dto">
-	SELECT * FROM O_CODE
-</select>
-
-<!--  진료 상세 -->
-<select id="selectAllODetail" resultType="com.min.edu.dto.AllObj_Dto">
-SELECT * FROM OBJ WHERE MAIN_OBJ=${main_obj}
-</select>
 </mapper>
