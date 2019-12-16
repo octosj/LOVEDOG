@@ -39,21 +39,22 @@ WHERE DELFLAG='N' AND SEQ IN
 </update>
 
 
-<!-- 전체 글 보기 -->
+ <!-- 병원정보 게시판 전체글 조회 JOIN -->
 <select id="hallBoard" resultType="HBdto">
-SELECT SEQ, H_REGI, U_ID, TITLE, CONTENT, REFER, STEP, DEPTH, F_NAME, DELFLAG, REGDATE, READCOUNT
-FROM HONGBOARD
+SELECT SEQ, B.H_REGI, B.U_ID, TITLE, CONTENT, REFER, STEP, DEPTH, F_NAME, DELFLAG, REGDATE, READCOUNT
+FROM HOSPITAL H JOIN HONGBOARD B ON
+H.H_REGI = B.H_REGI
 ORDER BY REFER DESC, STEP ASC
 </select>
 
-
-<!-- 상세 글 보기 -->
-<select id="hdetailBoard" parameterType="java.lang.String"
-		resultType="HBdto">
-SELECT SEQ, H_REGI, U_ID, TITLE, CONTENT, F_NAME, REGDATE, READCOUNT
-FROM HONGBOARD
-WHERE SEQ=#{seq}
+<!-- 병원정보 게시판 상세글 조회 JOIN -->
+<select id="hdetailBoard" parameterType="java.util.Map" resultType="HBdto">
+SELECT SEQ, B.H_REGI, B.U_ID, TITLE, CONTENT, REFER, STEP, DEPTH, F_NAME, DELFLAG, REGDATE, READCOUNT
+FROM HOSPITAL H JOIN HONGBOARD B ON
+H.H_REGI = B.H_REGI
+WHERE TRIM(H.H_REGI) = TRIM(#{h_regi}) AND B.SEQ =#{seq}
 </select>
+
 
 
 <!-- 답글(UPDATE) -->
@@ -81,14 +82,6 @@ UPDATE HONGBOARD
 SET READCOUNT = READCOUNT +1
 WHERE SEQ=#{seq}
 </update>
-
-
-
-
-
-
-
-
 
 
 
