@@ -39,7 +39,7 @@ SELECT H_REGI,H_ADDRESS,H_MAIL,H_NAME,H_PHONE,OBJ_CODE FROM HOSPITAL JOIN  H_COD
 	WHERE  (H_REGI NOT in (SELECT  H_REGI
 									FROM RESERVATION  
 										WHERE  R_DATE= to_date(#{r_date},'YYYYMMDDHH24MISS')))
-	AND MAIN_OBJ = #{main_obj}
+	AND MAIN_OBJ = #{main_obj} AND OBJ_DETAIL_CODE=#{obj_detail_code}
 </select>
 
 <!-- 예약 추가 -->
@@ -70,6 +70,6 @@ SELECT H_REGI,H_ADDRESS,H_MAIL,H_NAME,H_PHONE,OBJ_CODE FROM HOSPITAL JOIN  H_COD
 
 <!--  진료 상세 -->
 <select id="selectAllODetail" resultType="com.min.edu.dto.AllObj_Dto">
-SELECT * FROM OBJ WHERE MAIN_OBJ=${main_obj}
+SELECT * FROM OBJ WHERE MAIN_OBJ=#{Main_obj}
 </select>
 </mapper>
