@@ -21,6 +21,17 @@
    th{background-color:skyblue;}
 </style>
 </head>
+<script type="text/javascript">
+	function writeForm(){
+		location.href="./write.do";
+
+	}
+
+	function main(){
+		location.href="./init.do";
+	}
+	
+</script>
 <body>
 <%
 	List<HongBoard_Dto> lists = (List<HongBoard_Dto>)request.getAttribute("lists");
@@ -34,6 +45,7 @@
          <th>title</th>
          <th>regdate</th>
          <th>readcount</th>
+         <th>regi</th>
       </tr>
    </thead>
 
@@ -42,9 +54,10 @@
       <tr>
          <td><%=dto.getSeq()%></td>
          <td><%=dto.getU_id()%></td>
-         <td><%=dto.getTitle()%></td>
+         <td><a href="hdetail.do?seq=<%=dto.getSeq()%>&h_regi=<%=dto.getH_regi()%>"><%=dto.getTitle()%></a></td>
          <td><%=dto.getRegdate()%></td>
          <td><%=dto.getReadcount()%></td>
+         <td><%=dto.getH_regi()%></td>
       <%
    }
       %>
@@ -52,8 +65,8 @@
    </tbody>
 
 </table>
-
-
+<input type="button" id="Nwrite" value="새글작성" onclick="writeForm()">
+<input type="button" id="main" value="메인으로 가기" onclick="main()">
 </body>
 </html>
 

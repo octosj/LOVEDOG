@@ -39,11 +39,7 @@ public class FB_IDaoImpl implements FB_IDao{
 	@Override
 	public boolean delBoard(String seq) {
 		
-		log.info("seq=====>{}",seq);
-		
 		int cnt = sqlSession.update(NS+"delBoard", seq);
-		
-		log.info("cnt=====>{}",cnt);
 		
 		return cnt>0?true:false;
 	}

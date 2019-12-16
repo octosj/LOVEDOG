@@ -1,11 +1,12 @@
-<%@page import="com.min.edu.dto.FreeBoard_Dto"%>
+<%@page import="java.util.List"%>
+<%@page import="com.min.edu.dto.HongBoard_Dto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>상세보기</title>
+<title>병원 정보 게시판 상세보기</title>
 <style type="text/css">
 
 	table, th, td{
@@ -19,29 +20,10 @@
 </style>
 </head>
 <%
-	FreeBoard_Dto dto = (FreeBoard_Dto)request.getAttribute("lists");
+	List<HongBoard_Dto> lists = (List<HongBoard_Dto>)request.getAttribute("lists") ;
+	HongBoard_Dto dto = lists.get(0);
 %>
 <body>
-<script type="text/javascript">
-function modifyjs(){
-//	alert("a");
-	location.href="./modifyForm.do?seq="+<%=dto.getSeq()%> + "&selEtc=" + '<%=dto.getB_type()%>';
-}
-
-function replyjs(){
-//	alert("a");
-	location.href="./replyForm.do?seq="+<%=dto.getSeq()%>;
-}
-
-function deletejs(){
-//	alert("a");
-	location.href="./del.do?seq="+<%=dto.getSeq()%> + "&selEtc=" + '<%=dto.getB_type()%>';
-
-}
-
-
-
-</script>
 <table>
 	<tbody>
 		<tr>
@@ -68,6 +50,12 @@ function deletejs(){
 				<%=dto.getRegdate()%>
 			</td>
 		</tr>
+		<tr>
+			<th>사업자등록증</th>
+			<td>
+				<%=dto.getH_regi()%>
+			</td>
+		</tr>
 	</tbody>
 </table>
 	<form>
@@ -78,8 +66,16 @@ function deletejs(){
 
 
 
+
+
+
 </body>
 </html>
+
+
+
+
+
 
 
 

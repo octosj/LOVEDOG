@@ -53,10 +53,15 @@ public class HB_IServiceImpl implements HB_IService{
 	}
 
 	@Override
-	public HongBoard_Dto hdetailBoard(String seq) {
-		log.info("hdetailBoard 상세글보기, {}", seq);
-		dao.hreadcount(seq);
-		return dao.hdetailBoard(seq);
+	public List<HongBoard_Dto> hdetailBoard(Map<String, String> map) {
+		log.info("hdetailBoard 상세글보기, {}", map);
+	//	log.info("h_regi==={}", h_regi);
+	//	log.info("seq==={}", seq);
+	//    Map<String, String> map = new HashMap<String, String>();
+			dao.hreadcount(map.get("seq"));
+		//	dao.hreadcount(seq);
+			log.info("seq========>{}", map.get("seq"));
+		return dao.hdetailBoard(map);
 	}
 
 	@Override
@@ -74,3 +79,5 @@ public class HB_IServiceImpl implements HB_IService{
 		
 	}
 }
+
+
