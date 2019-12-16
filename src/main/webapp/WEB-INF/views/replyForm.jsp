@@ -11,7 +11,9 @@
 <%
 	FreeBoard_Dto dto = (FreeBoard_Dto)request.getAttribute("dto");
 %>
+<script type="text/javascript">
 
+</script>
 <form action="./reply.do?u_id=<%=dto.getU_id()%>&selEtc=<%=dto.getB_type()%>" method="post">
 	<input type="hidden" name="seq" value="<%=dto.getSeq()%>">
 	<input type="hidden" name="b_type" value="<%=dto.getB_type()%>">
