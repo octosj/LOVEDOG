@@ -21,7 +21,7 @@
 	User_Dto dto = (User_Dto) request.getAttribute("Dto");
 %>
 <body>
-	<form action="./delete.do" method="post">
+	<form action="./index.do" method="post" style="text-align: center;">
 		<div>
 		<h2><%=dto.getU_id()%>님 정말 탈퇴하시겠습니까?</h2>
 			<table>
@@ -32,13 +32,21 @@
 					</td>
 				</tr>
 			</table>
+			<div >
 				<tr>
-					<td >
-						<input type="button" value="취소" onclick="Cancel()">
+					<td>
 						<input type="submit" value="탈퇴">
+						<input type="button" value="취소" onclick="Cancel()">
 					</td>
 				</tr>
+			</div>
 		</div>
 	</form>
+	
+	<script type="text/javascript">
+		function Cancel() {
+			location.href = "index.do";
+		}
+	</script>
 </body>
 </html>

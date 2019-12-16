@@ -56,8 +56,9 @@ public class UserController {
 		log.info("delete 회원 삭제 / 탈퇴", new Date());
 		User_Dto dto = (User_Dto) session.getAttribute("Dto");
 		boolean isc = service.DeleteUser(dto.getU_id());
-		return isc?"redirect:/Mypage.do":"redirect:/delete.do"+dto.getU_id();
+		return isc?"redirect:/Mypage.do":"redirect:/delete.do?u_id="+dto.getU_id();
 	}
+	
 	@RequestMapping(value = "/modifyUser.do", method = RequestMethod.POST)
 	public String modifyUser(HttpSession session) {
 		log.info("modifyUser 회원 수정 완료", new Date());

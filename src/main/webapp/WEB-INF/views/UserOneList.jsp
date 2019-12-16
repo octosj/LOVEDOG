@@ -49,7 +49,7 @@
 				<td>
 					<input type="button" value="병원 신청" onclick="H_sin()">
 					<input type="button" value="회원 수정" onclick="UserModify()">
-					<input type="button" value="회원 탈퇴" onclick="deleteForm()">
+					<input type="button" value="회원 탈퇴" onclick="deleteForm('<%=dto.getU_id()%>')">
 				</td>
 			</tr>
 		</div>
@@ -65,6 +65,14 @@
 // 			alert("ok");
 			location.href = "./modifyUserForm.do";
 		}
+		
+// 		function deleteForm(val){
+// // 			alert(typeof val);
+// 			var bool = confirm("탈퇴 시 복구가 불가능합니다.");
+// 			if (bool) {				
+// 			location.href="./delete.do";
+// 			}
+// 		}
 	</script>
 </body>
 </html>
