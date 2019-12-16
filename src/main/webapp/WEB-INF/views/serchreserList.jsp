@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>병원관리페이지</title>
+<title>Insert title here</title>
 </head>
 <body>
-
+${lists}
 </body>
 </html>

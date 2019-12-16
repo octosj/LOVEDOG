@@ -36,16 +36,52 @@ $(function(){
 });
 
 function objChk() {
-	var objcc = document.getElementById("obj");var val;
+	var objcc = document.getElementById("obj");
+	var val;
 	
 	for(i=0; i<objcc.options.length; i++) {
-	    if(objcc.options[i].selected == true) {
+		if(objcc.options[i].selected == true) {
 	        val = objcc.options[i].value;
 	        break;
 	    }
 	}
-	alert(val);
+// 	alert(val);
+	jQuery.ajax({
+		type : "post",
+		url:"./objAjax.do",
+		data:"main_obj="+val,
+		success: function(data){
+			var appendhtml;
+			for (var i = 0; i < data.DLists.length; i++) {
+				appendhtml += "<option value="+data.DLists[i].obj_detail_code+">";
+				appendhtml += data.DLists[i].obj_content;
+				appendhtml += "</option>";
+			}
+			
+			
+			
+			$("#obj_detail").empty();
+			$("#obj_detail").append(appendhtml);
+		}
+
+			
+	});
+// 	alert(val);
+	var objd = document.getElementById("obj_detail");
+	var vald;
+	
+	for(i=0; i<objd.options.length; i++) {
+		if(objd.options[i].selected == true) {
+	        vald = objd.options[i].value;
+	        break;
+	    }
+	}
+// 	alert(vald);
 }
+
+$(function () {
+	$("")
+})
 
 </script>
 <script type="text/javascript"></script>
@@ -59,7 +95,7 @@ function objChk() {
 		<div>
 			<a>예약 신청</a>
 			<a>예약 조회 : 병원</a>
-			<a>예약 신청 : 사용자</a>
+			<a>예약 조회 : 사용자</a>
 			<a>예약 수정</a>
 		</div>
 	</div>
@@ -67,19 +103,22 @@ function objChk() {
 	<div>
 		<div>
 			예약 검색
-			<form action="">
-				<input type="text" class="calender" value="날짜를 입력하세요">
+			<form action="./serchReser.do">
+				<input type="text" class="calender" value="날짜를 입력하세요" readonly="readonly">
+				<input type="hidden" class="calender" name="r_date">
 				<input type="hidden" class="calenderBtn"><br>
 				
-			<select id="obj" onchange="objChk()">
+			<select id="obj" onchange="objChk()" name="main_obj">
 			<c:forEach items="${lists}" var="code">
 				<option value="${code.main_obj}">${code.obj_code}</option>
 			</c:forEach>
 			</select>
-			</form>
+			<select id="obj_detail" name="obj_detail_code">
+				<option>진료과를 입력하세요</option>
+			</select>
 			
-
-
+			<input type="submit" value="검색">
+			</form>
 		</div>
 	</div>
 
