@@ -1,5 +1,6 @@
 package com.min.edu.model.FreeBoard;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -9,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.min.edu.ctrl.FBController;
 import com.min.edu.dto.FreeBoard_Dto;
 
 @Repository
@@ -37,11 +39,7 @@ public class FB_IDaoImpl implements FB_IDao{
 	@Override
 	public boolean delBoard(String seq) {
 		
-		log.info("seq=====>{}",seq);
-		
 		int cnt = sqlSession.update(NS+"delBoard", seq);
-		
-		log.info("cnt=====>{}",cnt);
 		
 		return cnt>0?true:false;
 	}
@@ -52,11 +50,17 @@ public class FB_IDaoImpl implements FB_IDao{
 		return cnt>0?true:false;
 	}
 
-	
 
 	@Override
-	public List<FreeBoard_Dto> allBoard(String selEtc) {
-		return sqlSession.selectList(NS+"allBoard", selEtc);
+	public List<FreeBoard_Dto> allBoard(String selEtc, String search_option, String keyword) {
+		Map<String, String> map = new HashMap<String, String>();
+		
+		log.debug("selEtc=============>{}",selEtc);
+		
+		map.put("selEtc", selEtc);
+		map.put("search_option", search_option);
+		map.put("keyword", keyword);
+		return sqlSession.selectList(NS+"allBoard", map);
 	}
 	
 	@Override
@@ -80,5 +84,6 @@ public class FB_IDaoImpl implements FB_IDao{
 	public void readcount(String seq) {
 		sqlSession.update(NS+"readcount", seq);
 	}
+
 
 }

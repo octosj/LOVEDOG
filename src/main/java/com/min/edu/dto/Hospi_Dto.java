@@ -13,8 +13,9 @@ public class Hospi_Dto implements Serializable{
 	private String h_regi   ;
 	private String u_id     ;
 	private String h_enable ;
-	private String main_obj;
+	private String main_obj ;
 	private String main_ani;
+	private String obj_code ;
 
 	public Hospi_Dto() {
 	}
@@ -31,6 +32,7 @@ public class Hospi_Dto implements Serializable{
 		this.h_enable = h_enable;
 		this.main_obj = main_obj;
 		this.main_ani = main_ani;
+		this.obj_code = obj_code;
 	}
 
 	public String getH_name() {
