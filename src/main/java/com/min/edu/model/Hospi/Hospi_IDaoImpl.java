@@ -23,7 +23,7 @@ public class Hospi_IDaoImpl implements Hospi_IDao {
 
 	@Autowired
 	private SqlSessionTemplate SqlSession;
-	private final String NS ="com.min.edu.dto.Hospi_Dto.";
+	private final String NS ="sarang.hagae.Hospital.";
 	
 	@Override
 	public boolean insertHospital(Hospi_Dto dto) {

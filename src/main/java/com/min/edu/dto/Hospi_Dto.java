@@ -13,20 +13,14 @@ public class Hospi_Dto implements Serializable{
 	private String h_regi   ;
 	private String u_id     ;
 	private String h_enable ;
-	
+	private String main_obj;
+	private String main_ani;
 
 	public Hospi_Dto() {
 	}
-	
-	@Override
-	public String toString() {
-		return "Hospi_Dto [h_name=" + h_name + ", h_address=" + h_address + ", h_phone=" + h_phone + ", h_mail="
-				+ h_mail + ", h_regi=" + h_regi + ", u_id=" + u_id + ", h_enable=" + h_enable + "]";
-	}
 
-	
 	public Hospi_Dto(String h_name, String h_address, String h_phone, String h_mail, String h_regi, String u_id,
-			String h_enable) {
+			String h_enable, String main_obj, String main_ani) {
 		super();
 		this.h_name = h_name;
 		this.h_address = h_address;
@@ -35,8 +29,9 @@ public class Hospi_Dto implements Serializable{
 		this.h_regi = h_regi;
 		this.u_id = u_id;
 		this.h_enable = h_enable;
+		this.main_obj = main_obj;
+		this.main_ani = main_ani;
 	}
-	
 
 	public String getH_name() {
 		return h_name;
@@ -94,8 +89,27 @@ public class Hospi_Dto implements Serializable{
 		this.h_enable = h_enable;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public String getMain_obj() {
+		return main_obj;
+	}
+
+	public void setMain_obj(String main_obj) {
+		this.main_obj = main_obj;
+	}
+
+	public String getMain_ani() {
+		return main_ani;
+	}
+
+	public void setMain_ani(String main_ani) {
+		this.main_ani = main_ani;
+	}
+
+	@Override
+	public String toString() {
+		return "Hospi_Dto [h_name=" + h_name + ", h_address=" + h_address + ", h_phone=" + h_phone + ", h_mail="
+				+ h_mail + ", h_regi=" + h_regi + ", u_id=" + u_id + ", h_enable=" + h_enable + ", main_obj=" + main_obj
+				+ ", main_ani=" + main_ani + "]";
 	}
 	
 	
