@@ -33,4 +33,12 @@ public class Login_IServiceImpl implements Login_IService{
 		return dao.duplicateidCheck(id);
 	}
 
+
+	@Override
+	@Transactional
+	public boolean registUser(Map<String, String> map) {
+		log.info("*********[registUser] Service 접근 시작 {}*********\"", map);
+		return dao.registUser(map);
+	}
+
 }
