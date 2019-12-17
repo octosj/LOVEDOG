@@ -39,7 +39,7 @@
 <!-- 병원 전체 조회 -->
 <select id="selectAllHospital" resultType="HSPdto">
 		SELECT H_NAME, H_ADDRESS, H_PHONE, H_MAIL, 
-  		H_REGI, U_ID, H_ENABLE, MAIN_OBJ, MAIN_ANI 
+  		H_REGI, U_ID, H_ENABLE 
       	FROM HOSPITAL
 </select>
 
