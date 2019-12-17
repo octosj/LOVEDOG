@@ -8,11 +8,9 @@
 </head>
 <script type="text/javascript">
 	function submitCheck(){
-// 		alert("작동");
 		var password = document.getElementById("password");
 		var phone = document.getElementById("phone");
 		var email = document.getElementById("email");
-// 		alert(add+":"+phone+":"+email);
 		var regExp = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
 		
 		if (add.value == "") {
