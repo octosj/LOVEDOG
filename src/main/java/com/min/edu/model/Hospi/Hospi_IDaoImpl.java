@@ -40,7 +40,7 @@ public class Hospi_IDaoImpl implements Hospi_IDao {
 	@Override
 	public boolean deleteHospital(String u_id) {
 		int cnt = SqlSession.delete(NS+"deleteHospital");
-		return cnt>0?true:false;
+		return false;
 	}
 
 	@Override
@@ -50,7 +50,7 @@ public class Hospi_IDaoImpl implements Hospi_IDao {
 	}
 
 	@Override
-	public Hospi_Dto selectOneHospital(String u_id) {
+	public boolean selectOneHospital(String u_id) {
 		
 		return SqlSession.selectOne(NS+"selectOneHospital", u_id);
 	}

@@ -57,9 +57,14 @@ public class LoginController {
 	@RequestMapping(value = "/loginU.do", method = RequestMethod.POST)
 	public String LoginU(HttpSession session, User_Dto dto) {
 		Map<String, String> map = new HashMap<String, String>(); 
-		map.put("u_id", dto.getU_id()); 
-		map.put("u_password", dto.getU_password());
-		map.put("u_auth", dto.getU_auth());
+				map.put("u_id", dto.getU_id()); 
+			if(dto.getU_id() == "admin") {
+				map.put("u_password", dto.getU_password());
+				map.put("u_auth", "A");
+			}else{
+				map.put("u_password", dto.getU_password());
+				map.put("u_auth", dto.getU_auth());
+			}
 		log.info("LoginU에 접근합니다. --{}",dto.getU_id());
 		User_Dto Udto = service.loginUser(map);
 		session.setAttribute("user", Udto);
@@ -96,68 +101,9 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value = "/admin.do", method = RequestMethod.GET)
-	public String admin() {
-		log.info(" 어드민 로그인 접속하였습니다. ");
-		return "admin";
-	}
-	
-	@RequestMapping(value = "/loginA.do", method = RequestMethod.POST)
-	public String LoginA(HttpSession session, User_Dto dto) {
-		Map<String, String> map = new HashMap<String, String>(); 
-		map.put("u_id", dto.getU_id()); 
-		map.put("u_password", dto.getU_password());
-		map.put("u_auth", dto.getU_auth());
-		log.info("LoginU에 접근합니다. --{}",dto.getU_id());
-		User_Dto Udto = service.loginUser(map);
-		session.setAttribute("user", Udto);
-		System.out.println(dto.getU_id());
-		System.out.println(dto.getU_auth());
- 		return "redirect:/Aview.do";
-	}
-	
-	@RequestMapping(value = "/Aview.do", method = RequestMethod.GET)
-	public String Aview() {
-		log.info(" 어드민 로그인 성공 ~~~~ ");
-		return "Aview";
-	}
-	
-	@RequestMapping(value= "/usechk.do",method = RequestMethod.GET)
-	public String usechk() {
-		log.info("회원가입 이용약관 동의로 가기");
-		return "usechk";
-	}
-
-	@RequestMapping(value = "/regiForm.do", method = RequestMethod.GET)
-	public String regiForm() {
-		log.info("회원가입으로 이동합니다.");
-		return "regiForm";
-		
-	}
-	
-	@RequestMapping(value = "/idchk.do", method = RequestMethod.POST)
-	@ResponseBody
-	public Map<String, String> idCheck(String id){
-		log.info("************* Welcome idCheck.do : \t{}*************", id);
-		Map<String, String> map = new HashMap<String, String>();
-		boolean isc =service.duplicateidCheck(id);
-		log.info("************* Welcome idCheck.do : \t{}*************", isc);
-		map.put("isc", isc+"");
-		return map;
-	}
-	
-	@RequestMapping(value = "/regist.do", method = RequestMethod.POST)
-	@ResponseBody
-	public String regist(HttpSession session, User_Dto dto) {
-		log.info("************* [regist.do] 회원가입에 접근합니다.{}*************",dto);
-		Map<String, String> map = new HashMap<String, String>();
-		map.put("u_id", dto.getU_id()); 
-		map.put("u_password", dto.getU_password());
-		map.put("u_name",dto.getF_name());
-		map.put("u_phone",dto.getU_phone());
-		map.put("u_email",dto.getU_email());
-		log.info("************* [regist.do] 회원가입에 성공하였습니다.{}*************",map);
-		boolean isc = service.registUser(map);
-		session.setAttribute("user", isc);
-		return isc?"redirect:/view.do":"redirect:/regiForm.do";
+	public String admin(HttpSession session, User_Dto dto) {
+		log.info(" 어드민 로그인합니다.  성공 ~~~~ ");
+		User_Dto Udto = (User_Dto) session.getAttribute("Huser");
+		return "redirect:/Aview.do";
 	}
 }
