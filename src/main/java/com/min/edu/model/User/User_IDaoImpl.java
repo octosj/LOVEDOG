@@ -16,8 +16,9 @@ public class User_IDaoImpl implements User_IDao {
 	private SqlSessionTemplate session;
 
 	@Override
-	public int DeleteUser(String u_id) {
-		return session.update(NS+"DeleteUser", u_id);
+	public boolean DeleteUser(String u_id) {
+		int n = session.update(NS+"DeleteUser", u_id);
+		return (n > 0)? true:false;
 	}
 
 	@Override

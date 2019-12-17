@@ -10,6 +10,9 @@
 		<typeAlias type="com.min.edu.dto.Paging_Dto" alias="Pdto"/>
 		<typeAlias type="com.min.edu.dto.Reserv_Dto" alias="Rdto"/>
 		<typeAlias type="com.min.edu.dto.User_Dto" alias="Udto"/>
+		<typeAlias type="com.min.edu.dto.Obj_Dto" alias="Odto"/>
+		<typeAlias type="com.min.edu.dto.Ani_Dto" alias="Adto"/>
+		
 	</typeAliases>
    
    	<mappers>

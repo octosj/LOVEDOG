@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.min.edu</groupId>
-	<artifactId>LoveDog</artifactId>
-	<name>LoveDog</name>
-	<packaging>war</packaging>
-	<version>1.0.0-BUILD-SNAPSHOT</version>
-	<properties>
-		<java-version>1.8</java-version>
-		<org.springframework-version>4.0.1.RELEASE</org.springframework-version>
-		<org.aspectj-version>1.8.3</org.aspectj-version>
-		<org.slf4j-version>1.6.6</org.slf4j-version>
-	</properties>
-	
-	   <repositories>
+   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <groupId>com.min.edu</groupId>
+   <artifactId>LoveDog</artifactId>
+   <name>LoveDog</name>
+   <packaging>war</packaging>
+   <version>1.0.0-BUILD-SNAPSHOT</version>
+   <properties>
+      <java-version>1.8</java-version>
+      <org.springframework-version>4.0.1.RELEASE</org.springframework-version>
+      <org.aspectj-version>1.8.3</org.aspectj-version>
+      <org.slf4j-version>1.6.6</org.slf4j-version>
+   </properties>
+   
+      <repositories>
       <repository>
          <id>codelds</id>
          <url>https://code.lds.org/nexus/content/groups/main-repo</url>
@@ -173,11 +173,23 @@
          <version>3.8.1</version>
       </dependency>
   
+<<<<<<< HEAD
 	<dependency>
+=======
+      <!-- jackson library -->
+<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+<dependency>
+>>>>>>> branch 'master' of https://github.com/octosj/LoveDog.git
     <groupId>com.fasterxml.jackson.core</groupId>
     <artifactId>jackson-databind</artifactId>
     <version>2.10.0</version>
+<<<<<<< HEAD
 	</dependency>
+=======
+</dependency>
+
+
+>>>>>>> branch 'master' of https://github.com/octosj/LoveDog.git
  
       
       <!-- java mail api -->
@@ -206,7 +218,7 @@
       </dependency>
       
    </dependencies>
-	
+   
     <build>
         <plugins>
             <plugin>

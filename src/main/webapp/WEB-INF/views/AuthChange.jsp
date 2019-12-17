@@ -1,3 +1,4 @@
+<%@page import="com.min.edu.dto.User_Dto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -6,29 +7,27 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<%
+	User_Dto dto = (User_Dto) request.getAttribute("dto");
+%>
 <body>
 	<div>
 		<table>
 			<tr>
-				<th>
-					<td>
-						<input type="checkbox" onclick="checkAll(this.checked)">
-					</td>
-				</th>
+				<th><input type="checkbox" onclick="checkAll(this.checked)"></th>
 				<th>아이디</th>
 				<th>이름</th>
 				<th>전화번호</th>
 				<th>이메일</th>
 				<th>권한</th>
 			</tr>
-			
 			<tr>
-				<td> </td>
-				<td> </td>
-				<td> </td>
-				<td> </td>
-				<td> </td>
-				<td> </td>
+				<td><input type="checkbox" name="chk" value="<%=dto.getU_id()%>"></td>
+				<td><%=dto.getU_id()%></td>
+				<td><%=dto.getU_name()%></td>
+				<td><%=dto.getU_phone()%></td>
+				<td><%=dto.getU_email()%></td>
+				<td><%=dto.getU_auth()%></td>
 			</tr>
 		</table>
 		<tr>

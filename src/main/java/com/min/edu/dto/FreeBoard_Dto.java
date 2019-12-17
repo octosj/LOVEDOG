@@ -19,6 +19,15 @@ public class FreeBoard_Dto implements Serializable{
 	private int readcount;
 	private String b_type;
 	
+	private String search_option;
+	private String keyword;
+	
+	public FreeBoard_Dto(String search_option, String keyword) {
+		super();
+		this.search_option = search_option;
+		this.keyword = keyword;
+	}
+
 	public FreeBoard_Dto() {
 	}
 
@@ -39,11 +48,30 @@ public class FreeBoard_Dto implements Serializable{
 		this.b_type = b_type;
 	}
 
+	
+
+	public String getSearch_option() {
+		return search_option;
+	}
+
+	public void setSearch_option(String search_option) {
+		this.search_option = search_option;
+	}
+
+	public String getKeyword() {
+		return keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+
 	@Override
 	public String toString() {
 		return "FreeBoard_Dto [seq=" + seq + ", u_id=" + u_id + ", title=" + title + ", content=" + content + ", refer="
 				+ refer + ", step=" + step + ", depth=" + depth + ", f_name=" + f_name + ", delflag=" + delflag
-				+ ", regdate=" + regdate + ", readcount=" + readcount + ", b_type=" + b_type + "]";
+				+ ", regdate=" + regdate + ", readcount=" + readcount + ", b_type=" + b_type + ", search_option="
+				+ search_option + ", keyword=" + keyword + "]";
 	}
 
 	public int getSeq() {

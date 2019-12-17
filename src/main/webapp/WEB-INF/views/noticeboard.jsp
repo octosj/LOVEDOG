@@ -17,15 +17,13 @@
          text-align:center;
          padding:4px;
       }
-        
+      
    th{background-color:skyblue;}
 </style>
 </head>
 <script type="text/javascript">
 	function selView(){
 		var objidx = document.getElementById('selETC');
-// 		alert(objidx.selectedIndex);
-// 		alert(objidx.options[objidx.selectedIndex].value);
 		location.href="./noticeboard.do?selEtc=A";
 		
 	}
@@ -34,6 +32,10 @@
 		location.href="./write.do";
 	}
 
+	function main(){
+		location.href="./init.do";
+	}
+	
 </script>
 <body>
 
@@ -56,7 +58,6 @@
       </tr>
    </thead>
 
-
    <%for(FreeBoard_Dto dto : lists){%>
    <tbody>
       <tr>
@@ -73,6 +74,22 @@
    </tbody>
 
 </table>
+
+<form name="form1" action="./noticeboard.do" method="get">
+ 	<input type="hidden" name="selEtc" value="A" />
+    <select name="search_option" style="width: 70px;height: 22px;">
+        <option value="u_id"> 작성자 </option>
+        <option value="title"> 제목 </option>
+        <option value="content"> 내용 </option>
+    </select>
+    <input type="text"  name="keyword" value="${map.keyword}">
+    <input type="submit" value="조회">
+</form>
+
+
+
+
 <input type="button" id="Nwrite" value="새글작성" onclick="writeForm()">
+<input type="button" id="main" value="메인으로 가기" onclick="main()">
 </body>
 </html>
