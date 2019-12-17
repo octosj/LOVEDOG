@@ -1,19 +1,10 @@
-<%@page import="com.min.edu.dto.Hospi_Dto"%>
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<style type="text/css"></style>
 <title>병원관리페이지</title>
-<%
-		Object obj = request.getAttribute("lists");
-		List<Hospi_Dto> lists = (List<Hospi_Dto>) obj;
-// 		Hospi_Dto Hdto = (Hospi_Dto)request.getAttribute("lists");
-%>
-
 </head>
 <body>
 	<jsp:include page="./header.jsp"/>
@@ -68,7 +59,5 @@
 		
 	</script>
 
-	
-	
 </body>
 </html>

@@ -19,7 +19,7 @@
 				<th>이름</th>
 				<th>전화번호</th>
 				<th>이메일</th>
-				<th>권한<%=dto.getU_auth()%></th>
+				<th>권한</th>
 			</tr>
 			<tr>
 				<td><input type="checkbox" name="chk" value="<%=dto.getU_id()%>"></td>
@@ -27,19 +27,7 @@
 				<td><%=dto.getU_name()%></td>
 				<td><%=dto.getU_phone()%></td>
 				<td><%=dto.getU_email()%></td>
-				<td>
-					<select name="role">
-						<option value="A" <%=dto.getU_auth().equals("A")?"selected":"" %>>관리자</option>
-						<option value="U" <%=dto.getU_auth().equals("U")?"selected":"" %>>사용자</option>
-						<option value="H" <%=dto.getU_auth().equals("U")?"selected":"" %>>병원 관리자</option>
-					</select>
-					<br>
-					관리자:<input type="radio" name="authRd" value="A"/><br>
-					사용자:<input type="radio" name="authRd" value="B"/><br>
-					병원관리자: <input type="radio" name="authRd" value="C"/>
-				</td>
-				
-				
+				<td><%=dto.getU_auth()%></td>
 			</tr>
 		</table>
 		<tr>

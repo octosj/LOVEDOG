@@ -11,6 +11,7 @@
 		 text-align: right;
 		 background-color: skyblue;
 		 margin-top: 20px;
+		 float: right;
 	}
 	
 	.HMtotal{
@@ -27,7 +28,6 @@
 
 <div class="HMtotal">
 	<button onclick="myFunction()">profile</button>
-</div>
 
 	<div id="HMdiv">
 	<span>${mDto.name}님 환영합니다.(등급:${mDto.auth=='A'?"관리자":'일반'})</span><br>
@@ -37,6 +37,7 @@
 	<a href="">LOGOUT</a><br>
 	</div>
 	
+</div>
 
 <script>
 function myFunction() {
