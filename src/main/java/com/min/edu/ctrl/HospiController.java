@@ -39,5 +39,42 @@ public class HospiController {
 		model.addAttribute("lists", lists);
 		return "HospiList";
 	}
+
+	
+	// 병원목록 넘어가는 과정
+	@RequestMapping(value = "/regist.do", method = RequestMethod.GET)
+	public String HospiAwaitList(Model model) {
+		logger.info("HospiAwaitList \t{}", new Date());
+		List<Hospi_Dto> Alists = service.selectAllHospital();
+		System.out.println();
+		System.out.println(Alists);
+		System.out.println();
+		model.addAttribute("Alists", Alists);
+		return "HospiAwaitList";
+	}
+	
+	
+	// 병원 상세보기
+	@RequestMapping(value = "/detailHospital.do", method = RequestMethod.GET)
+	public String detailHospital(Model model, String u_id) {
+		logger.info("detailHospital 병원 상세보기 \t{}", u_id);
+//		Hospi_Dto dto = (Hospi_Dto)session.getAttribute("hDto");
+//		System.out.println(dto);
+		Hospi_Dto hDto = service.selectOneHospital(u_id);
+		model.addAttribute("dto", hDto);
+		return "HospiDetail";
+	}
+	
+	
+	// 병원 추가
+	@RequestMapping(value = "/addHospital.do", method = RequestMethod.POST)
+	public String addHospital() {
+		logger.info("HospiAwaitList \t{}", new Date());
+		
+		return null;
+	}
+	
+	
+
 	
 }
