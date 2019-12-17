@@ -15,6 +15,7 @@
    	<mappers>
    		<mapper resource="/sqls/FB_Mapper.xml"/>
    		<mapper resource="/sqls/HB_Mapper.xml"/>
+   		<mapper resource="/sqls/Hospi_Mapper.xml"/>
    		<mapper resource="/sqls/Login_Mapper.xml"/>
    		<mapper resource="/sqls/Reserv_Mapper.xml"/>
    		<mapper resource="/sqls/User_Mapper.xml"/>
