@@ -40,7 +40,7 @@
 				%>
 			
 		<tr>
-			<td><a href=""><%=dto.getU_id() %></a></td>
+			<td><a href="./detailHospital.do?u_id"+<%=dto.getU_id() %>><%=dto.getU_id() %></a></td>
 			<td><a><%=dto.getH_name() %></a></td>
 			<td><a><%=dto.getH_phone() %></a></td>
 			<td><a><%=dto.getH_mail() %></a></td>
