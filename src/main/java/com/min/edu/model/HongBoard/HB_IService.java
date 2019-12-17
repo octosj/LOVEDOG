@@ -19,17 +19,17 @@ public interface HB_IService {
 			// 다중 삭제
 			public boolean hdelflagBoard(Map<String, String[]> map);
 			
-			
 			// 전체 글 보기
 			public List<HongBoard_Dto> hallBoard();
 			
 			// 상세 글 보기
-			public HongBoard_Dto hdetailBoard(String seq);
+			public List<HongBoard_Dto> hdetailBoard(Map<String, String> map);
 			
 			// 답글
 			public boolean hreplyBoard(HongBoard_Dto dto);
 			
 			// 조회수 증가
 			public void hreadcount(String seq);
+
 	
 }

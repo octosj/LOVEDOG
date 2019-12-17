@@ -59,7 +59,6 @@ public class UserController {
 		boolean isc = service.DeleteUser(dto.getU_id());
 		return isc?"redirect:/index.do":"redirect:/delete.do";
 	}
-	
 	@RequestMapping(value = "/modifyUser.do", method = RequestMethod.POST)
 	public String modifyUser(HttpSession session, User_Dto dto) {
 		log.info("modifyUser 회원 수정 완료", new Date());
@@ -71,6 +70,6 @@ public class UserController {
 	@RequestMapping(value = "/modifyUserForm.do", method = RequestMethod.GET)
 	public String modifyUserForm(HttpSession session) {
 		log.info("modifyUserForm 회원 수정 페이지 이동", new Date());
-		return "UserModify";
+		return "HospiList";
 	}
 }
