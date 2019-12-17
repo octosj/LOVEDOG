@@ -23,15 +23,21 @@
 		<thead>
 				<tr>
 					<th>사업자등록증</th>
-					<td>a</td>
 				</tr>
+				<tr></tr>
+				<tr></tr>
+				<tr></tr>
+				<tr></tr>
+				<tr></tr>
+				<tr></tr>
+				
 				<tr>
 					<th>회원아이디</th>
-					<td>병원 이름</td>
-					<td></td>
-					<td>전화번호</td>
-					<td>이메일</td>
-				</tr>
+					<th>병원 이름</th>
+					<th>전화번호</th>
+					<th>이메일</th>
+				</tr>	
+					
 			</thead>
 				
 			<tbody>
