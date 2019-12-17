@@ -9,24 +9,24 @@
 <style type="text/css"></style>
 <title>병원상세페이지</title>
 <%
-		Object obj = request.getAttribute("dto");
-		Hospi_Dto hdto = (Hospi_Dto)obj;
+		Hospi_Dto obj = (Hospi_Dto)request.getAttribute("dto");
 %>
 
 </head>
 <body>
 	<jsp:include page="./header.jsp"/>
 
+<%-- ${dto} --%>
 	<div class="HListDiv">
-	<form action="./updateHospital.do" method="post">
+	<form action="./addHospital.do" method="post">
 	<table id="HList">
 		<thead>
 				<tr>
 					<th>사업자등록증</th>
-					<td></td>
+					<td>a</td>
 				</tr>
 				<tr>
-					<td>회원아이디</td>
+					<th>회원아이디</th>
 					<td>병원 이름</td>
 					<td></td>
 					<td>전화번호</td>
@@ -47,7 +47,7 @@
 			<tfoot>
 				<tr>
 					<td colspan="5">
-						<input type="submit" value="수정완료">
+						<input type="submit" value="병원추가">
 					</td>
 				</tr>
 			</tfoot>

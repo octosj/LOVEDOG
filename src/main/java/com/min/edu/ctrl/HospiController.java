@@ -60,20 +60,18 @@ public class HospiController {
 	
 	// 병원 상세보기
 	@RequestMapping(value = "/detailHospital.do", method = RequestMethod.GET)
-	public String detailHospital(HttpSession session, Model model, String u_id) {
+	public String detailHospital(Model model, String u_id) {
 		logger.info("detailHospital 병원 상세보기 \t{}", u_id);
-		Hospi_Dto dto = (Hospi_Dto)session.getAttribute("hDto");
-		System.out.println(dto);
-		Map<String, String> map = new HashMap<String, String>();
-		map.put("id", dto.getU_id());
-		boolean hDto = service.selectOneHospital(u_id);
+//		Hospi_Dto dto = (Hospi_Dto)session.getAttribute("hDto");
+//		System.out.println(dto);
+		Hospi_Dto hDto = service.selectOneHospital(u_id);
 		model.addAttribute("dto", hDto);
 		return "HospiDetail";
 	}
 	
 	
 	// 병원 추가
-	@RequestMapping(value = "/addHospital.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/addHospital.do", method = RequestMethod.POST)
 	public String addHospital() {
 		logger.info("HospiAwaitList \t{}", new Date());
 		

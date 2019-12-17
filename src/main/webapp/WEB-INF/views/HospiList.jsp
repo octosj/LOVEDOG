@@ -30,7 +30,6 @@
 					<th>이메일</th>
 					<th>사업자등록증</th>
 					<th>권한</th>
-<!-- 					<th>권한변경</th> -->
 				</tr>
 			</thead>
 			
@@ -40,7 +39,7 @@
 				%>
 			
 		<tr>
-			<td><a href=""><%=dto.getU_id() %></a></td>
+			<td><a href="./detailHospital.do?u_id=<%=dto.getU_id() %>"><%=dto.getU_id() %></a></td>
 			<td><a><%=dto.getH_name() %></a></td>
 			<td><a><%=dto.getH_phone() %></a></td>
 			<td><a><%=dto.getH_mail() %></a></td>

@@ -12,7 +12,7 @@ public interface Hospi_IService {
 	public boolean updateHospital(User_Dto dto);
 	public boolean deleteHospital(String u_id)   ;
 	public List<Hospi_Dto> selectAllHospital();
-	public boolean selectOneHospital(String u_id);
+	public Hospi_Dto selectOneHospital(String u_id);
 	public boolean insertAni(Map<String, String[]> main_ani)        ;
 	public boolean insertObj(Map<String, String[]> main_obj)        ;
 	

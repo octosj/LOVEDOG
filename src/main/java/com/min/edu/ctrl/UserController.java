@@ -69,6 +69,6 @@ public class UserController {
 	@RequestMapping(value = "/modifyUserForm.do", method = RequestMethod.GET)
 	public String modifyUserForm(HttpSession session) {
 		log.info("modifyUserForm 회원 수정 페이지 이동", new Date());
-		return "UserModify";
+		return "HospiList";
 	}
 }
