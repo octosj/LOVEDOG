@@ -33,7 +33,7 @@ public class LoginController {
       log.info("환영합니다! login page에 접속을 성공했습니다! ");
       return "login";
 }
-   
+
    @RequestMapping(value="/loginAjax.do",method=RequestMethod.POST)   
    @ResponseBody 
    public Map<String, String>loginAjax(HttpSession session, User_Dto dto){ 
@@ -87,6 +87,7 @@ public class LoginController {
       User_Dto Udto = (User_Dto) session.getAttribute("user");
       return "view";
    }
+
 
    @RequestMapping(value = "/Hview.do", method = RequestMethod.GET)
    public String Hview(HttpSession session, User_Dto dto) {

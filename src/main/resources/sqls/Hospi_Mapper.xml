@@ -4,66 +4,66 @@
 
 <!-- 병원 등록 신청 -->
 <insert id="insertHospital" parameterType="HSPdto">
-      INSERT INTO HOSPITAL(H_NAME, H_ADDRESS, H_PHONE, 
+		INSERT INTO HOSPITAL(H_NAME, H_ADDRESS, H_PHONE, 
         H_MAIL, H_REGI, U_ID, H_ENABLE)
-        VALUES(#{h_name}, #{h_address}, #{h_phone}, #{h_mail}, #{h_regi},  #{u_id}, 'Y')
+     	VALUES(#{h_name}, #{h_address}, #{h_phone}, #{h_mail}, #{h_regi},  #{u_id}, 'Y')
 </insert>
 
 
 <!-- 병원등록 허가 -->
 <update id="updateHospital" parameterType="HSPdto">
-      "UPDATE USER_U SET U_AUTH = 'H'
-         WHERE U_ID = 'user2'; 
-      UPDATE HOSPITAL SET H_ENABLE='N'
-         WHERE U_ID = 'user2'; "
+		"UPDATE USER_U SET U_AUTH = 'H'
+   		WHERE U_ID = 'user2'; 
+		UPDATE HOSPITAL SET H_ENABLE='N'
+   		WHERE U_ID = 'user2'; "
 </update>
 
 
 <!-- 병원 삭제 -->
 <update id="deleteHospital" parameterType="java.lang.String">
-      UPDATE HOSPITAL SET  H_ENABLE= 'Y' WHERE  U_ID =#{u_id}
+		UPDATE HOSPITAL SET  H_ENABLE= 'Y' WHERE  U_ID =#{u_id}
 </update>
 
 
 <!-- 다중 삭제 -->
 <update id="multiDelHospi" parameterType="java.util.Map">
-      UPDATE HOSPITAL
-      SET DELFLAG = 'Y'
-      WHERE DELFLAG='N' AND SEQ IN
+		UPDATE HOSPITAL
+		SET DELFLAG = 'Y'
+		WHERE DELFLAG='N' AND SEQ IN
 <foreach collection="seq_" item="seq" open="(" separator="," close=")">
-         #{seq}
-      </foreach>
+			#{seq}
+		</foreach>
 </update>
 
 
 <!-- 병원 전체 조회 -->
 <select id="selectAllHospital" resultType="HSPdto">
-      SELECT H_NAME, H_ADDRESS, H_PHONE, H_MAIL, 
-        H_REGI, U_ID, H_ENABLE
-         FROM HOSPITAL
+		SELECT H_NAME, H_ADDRESS, H_PHONE, H_MAIL, 
+  		H_REGI, U_ID, H_ENABLE 
+      	FROM HOSPITAL
 </select>
 
 
 <!-- 병원 상세조회 -->
 <select id="selectOneHospital" parameterType="java.lang.String"
-         resultType="HSPdto">
-      SELECT *
-        FROM HOSPITAL 
-         WHERE U_ID =#{u_id}
+			resultType="HSPdto">
+		SELECT *
+  		FROM HOSPITAL 
+   		WHERE U_ID =#{u_id}
 </select>
 
 
 <!-- 진료 동물 추가 -->
 <insert id="insertAni" parameterType="HSPdto">
-      INSERT INTO H_CODE_ANI (H_REGI,MAIN_ANI)
-      VALUES(#{h_regi},#{main_ani})
+		INSERT INTO H_CODE_ANI (H_REGI,MAIN_ANI)
+		VALUES(#{h_regi},#{main_ani})
 </insert>
 
 
 <!-- 진료 과 추가 -->
 <insert id="insertObj" parameterType="HSPdto">
-      INSERT INTO H_CODE_OBJ (H_REGI,MAIN_OBJ)
-      VALUES(#{h_regi},#{main_ani})
+		INSERT INTO H_CODE_OBJ (H_REGI,MAIN_OBJ)
+		VALUES(#{h_regi},#{main_ani})
 </insert>
 
 

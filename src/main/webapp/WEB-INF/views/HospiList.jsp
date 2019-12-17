@@ -1,3 +1,16 @@
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>병원관리페이지</title>
+</head>
+<body>
+
+</body>
+
 <%@page import="com.min.edu.dto.Hospi_Dto"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -40,7 +53,7 @@
 				%>
 			
 		<tr>
-			<td><a href=""><%=dto.getU_id() %></a></td>
+			<td><a href="./detailHospital.do?u_id"+<%=dto.getU_id() %>><%=dto.getU_id() %></a></td>
 			<td><a><%=dto.getH_name() %></a></td>
 			<td><a><%=dto.getH_phone() %></a></td>
 			<td><a><%=dto.getH_mail() %></a></td>
@@ -72,4 +85,5 @@
 	
 	
 </body>
+
 </html>

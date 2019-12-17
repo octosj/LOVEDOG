@@ -24,24 +24,6 @@
 	HongBoard_Dto dto = lists.get(0);
 %>
 <body>
-<script type="text/javascript">
-function hmodify(){
-	alert("a");
-	location.href="./hmodifyForm.do?seq="+<%=dto.getSeq()%>+"&h_regi="+'<%=dto.getH_regi()%>';
-}
-
-function hreply(){
-//	alert("a");
-	location.href="./hreplyForm.do?seq="+<%=dto.getSeq()%>+"&h_regi="+'<%=dto.getH_regi()%>';
-}
-
-function hdelete(){
-//	alert("a");
-	location.href="./hdel.do?seq="+<%=dto.getSeq()%>+"&h_regi="+'<%=dto.getH_regi()%>';
-
-}
-
-</script>
 <table>
 	<tbody>
 		<tr>
@@ -77,9 +59,9 @@ function hdelete(){
 	</tbody>
 </table>
 	<form>
-		<input type="button" id="hmodifyForm" value="수정" onclick="hmodify()">
-		<input type="button" id="hdel" value="삭제" onclick="hdelete()">
-		<input type="button" id="hreplyForm" value="답글" onclick="hreply()">
+		<input type="button" id="modifyForm" value="수정" onclick="modifyjs()">
+		<input type="button" id="delBoard" value="삭제" onclick="deletejs()">
+		<input type="button" id="replyForm" value="답글" onclick="replyjs()">
 	</form>
 
 
@@ -89,4 +71,11 @@ function hdelete(){
 
 </body>
 </html>
+
+
+
+
+
+
+
 

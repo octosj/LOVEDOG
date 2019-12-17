@@ -55,21 +55,19 @@ public class UserController {
 	public String delete(HttpSession session) {
 		log.info("delete 회원 삭제 / 탈퇴", new Date());
 		User_Dto dto = (User_Dto) session.getAttribute("Dto");
-		log.info("delete 회원 삭제 / 탈퇴 {}", dto);
 		boolean isc = service.DeleteUser(dto.getU_id());
-		return isc?"redirect:/index.do":"redirect:/delete.do";
+		return isc?"redirect:/Mypage.do":"redirect:/delete.do"+dto.getU_id();
 	}
 	@RequestMapping(value = "/modifyUser.do", method = RequestMethod.POST)
-	public String modifyUser(HttpSession session, User_Dto dto) {
+	public String modifyUser(HttpSession session) {
 		log.info("modifyUser 회원 수정 완료", new Date());
-		User_Dto mdto = (User_Dto) session.getAttribute("LDto");
-		dto.setU_id(mdto.getU_id());
+		User_Dto dto = (User_Dto) session.getAttribute("LDto");
 		boolean isc = service.UserModify(dto);
-		return isc? "redirect:/mainOne.do":"redirect:/modifyUser.do?u_id="+dto.getU_id();
+		return isc? "redirect:/mainOne.do":"redirect:/modifyUser.do";
 	}
 	@RequestMapping(value = "/modifyUserForm.do", method = RequestMethod.GET)
 	public String modifyUserForm(HttpSession session) {
 		log.info("modifyUserForm 회원 수정 페이지 이동", new Date());
-		return "HospiList";
+		return "UserModify";
 	}
 }
