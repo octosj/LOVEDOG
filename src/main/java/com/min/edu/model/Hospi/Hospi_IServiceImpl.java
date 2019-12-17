@@ -75,7 +75,7 @@ public class Hospi_IServiceImpl implements Hospi_IService {
 	 * @return Hospi_Dto
 	 */
 	@Override
-	public boolean selectOneHospital(String u_id) {
+	public Hospi_Dto selectOneHospital(String u_id) {
 		logger.info("병원 상세조회  selectOneHospital", new DATE());
 		dao.selectOneHospital(u_id);
 		return dao.selectOneHospital(u_id);

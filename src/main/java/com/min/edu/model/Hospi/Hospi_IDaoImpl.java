@@ -50,7 +50,7 @@ public class Hospi_IDaoImpl implements Hospi_IDao {
 	}
 
 	@Override
-	public boolean selectOneHospital(String u_id) {
+	public Hospi_Dto selectOneHospital(String u_id) {
 		
 		return SqlSession.selectOne(NS+"selectOneHospital", u_id);
 	}
