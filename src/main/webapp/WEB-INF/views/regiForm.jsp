@@ -40,17 +40,13 @@ function regiCheck(){
 	var pw = document.getElementById("password").value;
 	var email = document.getElementById("email").value;
 	var phone = document.getElementById("phone").value;
+	var f_name = document.getElementById("f_name").value;
 	
 	jQuery.ajax({
         type : "post",
         url : "./regist.do",
-        data : "u_id="+id+"&u_password="+pw+"&u_name="+name+"&u_phone="+phone+"&u_email="+email,
+        data : "u_id="+id+"&u_password="+pw+"&u_name="+name+"&u_phone="+phone+"&u_email="+email+"&f_name="+f_name,
 		success : function (data) {
-			alert(data.u_id);
-			alert(data.u_password);
-			alert(data.u_name);
-			alert(data.u_phone);
-			alert(data.u_email);
 		}
 });
 };
@@ -95,7 +91,7 @@ function regiCheck(){
 			<tr>
 				<th>File</th>
 				<td>
-					<input type="file" name="file" placeholder="회원사진" onchange="readURL(this)">
+					<input type="file" name="file" id="f_name"placeholder="회원사진" onchange="readURL(this)">
 					
 				</td>
 			</tr>

@@ -150,7 +150,7 @@ margin-bottom: 0px;
  }
  
  function regiForm(){
-	location.href="./usechk.do";
+   location.href="./usechk.do";
  }
 
  
