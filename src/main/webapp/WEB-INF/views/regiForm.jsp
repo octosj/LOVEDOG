@@ -35,6 +35,12 @@
 
 
 function regiCheck(){
+	var name = document.getElementById("name").value;
+	var id = document.getElementById("id").value;
+	var pw = document.getElementById("password").value;
+	var email = document.getElementById("email").value;
+	var phone = document.getElementById("phone").value;
+	
 	jQuery.ajax({
         type : "post",
         url : "./regist.do",
@@ -63,7 +69,7 @@ function regiCheck(){
 			<tr>
 				<th>PASSWORD</th>
 				<td>
-					<input type="password" name="pw" id="pw" placeholder="비밀번호">
+					<input type="password" name="pw" id="password" placeholder="비밀번호">
 				</td>
 			</tr>
 			<tr>

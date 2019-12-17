@@ -152,7 +152,7 @@ public class LoginController {
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("u_id", dto.getU_id()); 
 		map.put("u_password", dto.getU_password());
-		map.put("u_name",dto.getF_name());
+		map.put("u_name",dto.getU_name());
 		map.put("u_phone",dto.getU_phone());
 		map.put("u_email",dto.getU_email());
 		log.info("************* [regist.do] 회원가입에 성공하였습니다.{}*************",map);
