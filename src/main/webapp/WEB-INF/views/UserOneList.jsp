@@ -67,7 +67,6 @@
 		}
 		
 // 		function deleteForm(val){
-// // 			alert(typeof val);
 // 			var bool = confirm("탈퇴 시 복구가 불가능합니다.");
 // 			if (bool) {				
 // 			location.href="./delete.do";
