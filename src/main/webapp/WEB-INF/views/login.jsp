@@ -148,6 +148,11 @@ margin-bottom: 0px;
   document.getElementById(username).style.display = "block";
    evt.currentTarget.className += " active";
  }
+ 
+ function regiForm(){
+   location.href="./usechk.do";
+ }
+
 
  
  
@@ -209,4 +214,3 @@ function loginCheck(){
  
 </body>
 </html> 
-
