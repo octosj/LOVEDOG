@@ -50,7 +50,9 @@ tr, td {
 				<td><%=dto.getU_phone()%></td>
 				<td><%=dto.getU_email()%></td>
 				<td><%=dto.getU_enable()%></td>
-				<td><%=dto.getU_auth()%></td>
+				<td>
+							
+					</td>
 			</tr>
 			<%
 		}
