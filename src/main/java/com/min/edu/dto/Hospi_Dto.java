@@ -1,3 +1,4 @@
+
 package com.min.edu.dto;
 
 import java.io.Serializable;
@@ -139,5 +140,4 @@ public class Hospi_Dto implements Serializable{
 
    
    
-
 }

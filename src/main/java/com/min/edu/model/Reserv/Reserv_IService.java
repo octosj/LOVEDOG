@@ -12,7 +12,7 @@ import com.min.edu.dto.Reserv_Dto;
 public interface Reserv_IService {
 	
 	//전체 진료 과 조회
-	public List<Obj_Dto> selectHObj(String h_regi);
+	public List<Hospi_Dto> selectHObj(String h_regi);
 	
 	//전체 진료 동물 조회
 	public List<Obj_Dto> selectHAni(String h_regi);
@@ -34,4 +34,7 @@ public interface Reserv_IService {
 	
 	//전체 진료 상세 조회
 	public List<AllObj_Dto> selectAllODetail(String main_obj);
+	
+	//병원 상세조회
+	public Hospi_Dto selectOneHospital2(String h_regi);
 }

@@ -3,7 +3,7 @@
     pageEncoding="UTF-8"%>
 <html>
 <head>
-   <title>인덱스 화면입니다. =]</title>
+	<title>인덱스 화면입니다. =]</title>
 <style type="text/css">
 .tab {
   overflow: hidden;
@@ -46,15 +46,15 @@
 }
 
 #loginform{ 
-   width: 300px;
-   height: 500px;
+	width: 300px;
+	height: 500px;
 }
 
 #id{
-   width: 200px;
+	width: 200px;
 }
 #password{
-   width: 200px;
+	width: 200px;
 }
 
 h3{
@@ -73,15 +73,15 @@ margin-bottom: 0px;
 <h2>Tabs</h2>
 <p>Click on the buttons inside the tabbed menu:</p>
 
-   <input type="hidden" id="user_tab" name="user_tab" >
-   <div class="tab">
-     <button class="tablinks active" onclick="loginuser(event, 'user')">개인회원</button>
-     <button class="tablinks" onclick="loginuser(event, 'hospi')">병원기업</button>
-   </div>
+	<input type="hidden" id="user_tab" name="user_tab" >
+	<div class="tab">
+	  <button class="tablinks active" onclick="loginuser(event, 'user')">개인회원</button>
+	  <button class="tablinks" onclick="loginuser(event, 'hospi')">병원기업</button>
+	</div>
 
-   <form action="./loginU.do" method="post" id="frmU">
-      <div id="user" class="tabcontent" style="display: block;" >
-            <h3>유저 로그인</h3>
+	<form action="./loginU.do" method="post" id="frmU">
+		<div id="user" class="tabcontent" style="display: block;" >
+      		<h3>유저 로그인</h3>
             <input type="hidden"  name="u_auth" value="U">
             <table>
                <tr>
@@ -103,12 +103,12 @@ margin-bottom: 0px;
                   </th>
                </tr>
          </table>
-   </div>
+	</div>
      </form>
 
       <form action="./loginH.do" method="post" id="frmH">
-      <div id="hospi" class="tabcontent">
-            <h3>병원 로그인</h3>
+		<div id="hospi" class="tabcontent">
+      		<h3>병원 로그인</h3>
             <input type="hidden"  name="u_auth" value="H">
             <table>
                <tr>
@@ -130,7 +130,7 @@ margin-bottom: 0px;
                   </th>
                </tr>
          </table>
-      </div> 
+		</div> 
       </form>
       
 <script type="text/javascript">
@@ -150,67 +150,66 @@ margin-bottom: 0px;
  }
  
  function regiForm(){
-	location.href="./usechk.do";
+   location.href="./usechk.do";
  }
+
 
  
  
 function loginCheck(){
-   
-   
-   var div =  document.getElementsByTagName("div");
-   
-    for (var i = 0; i < div.length; i++) {
-      if(div[i].style.display == "block"){
-         var   auth =    div[i].childNodes[3].value;
-         alert(div[i].children.value);
-      }
-      }
+	
+	
+	var div =  document.getElementsByTagName("div");
+	
+	 for (var i = 0; i < div.length; i++) {
+		if(div[i].style.display == "block"){
+			var	auth = 	div[i].childNodes[3].value;
+			alert(div[i].children.value);
+		}
+		}
 
-      var id = document.getElementById(auth+"id").value;
-      var pw = document.getElementById(auth+"password").value;
+		var id = document.getElementById(auth+"id").value;
+		var pw = document.getElementById(auth+"password").value;
 
-   
-      if(id==null||id.trim()==""){
-      document.getElementById(auth+"id").focus();
-      $(auth+"id").val("");
-      alert("아이디를 확인해주세요.");
-   }else if(pw==null||pw=="".trim()){
-      document.getElementById(auth+"password").focus();
-      $(auth+"password").val("");
-      alert("비밀번호를 확인해주세요.");
-   }else{
-       jQuery.ajax({
-               type : "post",
-               url : "./loginAjax.do",
-               data : "u_id=" +id+ "&u_password=" +pw+"&u_auth=" +auth,
-               success : function(data) {
-                  if (data.msg == "성공") {
-                        alert(data.u_id);
-                        alert(data.u_password);
-                        alert(data.u_auth);
-                        if (data.u_auth == "U") {
-                           alert("회원으로 입력하셨습니다! 회원님의 auth는 ?"+"["+data.u_auth+"]");
-                           document.getElementById("frm" + data.u_auth).submit();
-                        }else if(data.u_auth == "H"){
-                           alert("병원으로 입력하셨습니다! 회원님의 auth는 ?"+"["+data.u_auth+"]")
-                           document.getElementById("frm" + data.u_auth).submit();
-                        }else if(data.u_id == "admin" && data.u_auth =="A"){
-                           alert("관리자님 반갑습니다!")
-                           frmU.submit();s
-                        }
-                     } else {
-                        alert("아이디와 비밀번호를 확인해 주세요");
-                     }
-                  },
-                  error : function() {
-                     alert("로그인에 문제가 생겼습니다");
-                  }
-               });
-      }
-   }
-  
-
+	
+		if(id==null||id.trim()==""){
+		document.getElementById(auth+"id").focus();
+		$(auth+"id").val("");
+		alert("아이디를 확인해주세요.");
+	}else if(pw==null||pw=="".trim()){
+		document.getElementById(auth+"password").focus();
+		$(auth+"password").val("");
+		alert("비밀번호를 확인해주세요.");
+	}else{
+		 jQuery.ajax({
+	            type : "post",
+	            url : "./loginAjax.do",
+	            data : "u_id=" +id+ "&u_password=" +pw+"&u_auth=" +auth,
+	            success : function(data) {
+						if (data.msg == "성공") {
+								alert(data.u_id);
+								alert(data.u_password);
+								alert(data.u_auth);
+								if (data.u_auth == "U") {
+									alert("회원으로 입력하셨습니다! 회원님의 auth는 ?"+"["+data.u_auth+"]");
+									document.getElementById("frm" + data.u_auth).submit();
+								}else if(data.u_auth == "H"){
+									alert("병원으로 입력하셨습니다! 회원님의 auth는 ?"+"["+data.u_auth+"]")
+									document.getElementById("frm" + data.u_auth).submit();
+								}else if(data.u_id == "admin" && data.u_auth =="A"){
+									alert("관리자님 반갑습니다!")
+									frmU.submit();s
+								}
+							} else {
+								alert("아이디와 비밀번호를 확인해 주세요");
+							}
+						},
+						error : function() {
+							alert("로그인에 문제가 생겼습니다");
+						}
+					});
+		}
+	}
 </script>
  
 </body>

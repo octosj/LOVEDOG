@@ -8,5 +8,7 @@
 </head>
 <body>
 	<h1><a href="main.do">회원 리스트 조회</a></h1>
+	<h1><a href="Mypage.do">마이페이지</a></h1>
+	
 </body>
 </html>

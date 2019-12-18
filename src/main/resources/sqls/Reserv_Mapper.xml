@@ -72,4 +72,11 @@ SELECT H_REGI,H_ADDRESS,H_MAIL,H_NAME,H_PHONE,OBJ_CODE FROM HOSPITAL JOIN  H_COD
 <select id="selectAllODetail" resultType="com.min.edu.dto.AllObj_Dto">
 SELECT * FROM OBJ WHERE MAIN_OBJ=#{Main_obj}
 </select>
+
+<!-- 병원 상세조회 -->
+<select id="selectOneHospital2" parameterType="java.lang.String" resultType="HSPdto">
+		SELECT *
+  		FROM HOSPITAL 
+   		WHERE H_REGI=#{h_regi}
+</select>
 </mapper>
