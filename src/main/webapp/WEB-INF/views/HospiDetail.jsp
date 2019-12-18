@@ -49,6 +49,7 @@ Hospi_Dto hdto = (Hospi_Dto)request.getAttribute("dto");
 				<tr>
 					<th>진료과</th>
 					<td><%=hdto.getMain_obj()%></td>
+
 				</tr>
 				<tr>
 					<th>진료동물</th>
@@ -67,12 +68,14 @@ Hospi_Dto hdto = (Hospi_Dto)request.getAttribute("dto");
 <%-- 					<button onclick="changeAuth('<%=hdto.getU_id()%>')">권한변경</button> --%>
 					</td>
 				</tr>
+
+
 			</tbody>
 			
 			
 	</table>
 			<input type="submit"  value="병원추가" >
-			
+
 	</form>
 	
 	

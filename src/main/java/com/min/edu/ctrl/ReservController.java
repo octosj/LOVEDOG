@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.min.edu.dto.AllObj_Dto;
 import com.min.edu.dto.Hospi_Dto;
-import com.min.edu.dto.Obj_Dto;
-import com.min.edu.model.Hospi.Hospi_IService;
 import com.min.edu.model.Reserv.Reserv_IService;
 
 @Controller
@@ -27,9 +25,6 @@ public class ReservController {
 	
 	@Autowired
 	Reserv_IService service;
-	
-	@Autowired
-	Hospi_IService hService;
 	
 	@RequestMapping(value = "/reser.do",method=RequestMethod.GET)
 	public String reser(Model model) {
@@ -50,13 +45,11 @@ public class ReservController {
 	}
 	
 	@RequestMapping(value = "/serchReser.do", method = RequestMethod.GET)
-	public String serchReser (String r_date, String main_obj, String obj_detail_code, String time, Model model) {
+	public String serchReser (String r_date, String main_obj, String obj_detail_code, Model model) {
 		log.info("serchReser 작동");
-		System.out.println(time);
 		System.out.println(main_obj);
-		System.out.println(obj_detail_code);
-		r_date = r_date.substring(0, 4)+r_date.substring(6, 8)+r_date.substring(10,12)+time;
 		System.out.println(r_date);
+		System.out.println(obj_detail_code);
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("main_obj", main_obj);
 		map.put("r_date", r_date);
@@ -65,17 +58,6 @@ public class ReservController {
 		model.addAttribute("lists", srLists);
 		System.out.println(srLists);
 		return "serchreserList";
-	}
-	
-	@RequestMapping(value = "/sReserList_detail.do",method=RequestMethod.GET)
-	public String sReserList_detail(String h_regi, Model model) {
-		log.info("sReserList_detail 작동\t:{}",h_regi);
-		Hospi_Dto dto = service.selectOneHospital2(h_regi);
-		model.addAttribute("hDetail",dto);
-		log.info("selectOneHospital2 list 작동\t:{}",dto);
-		List<Obj_Dto> oDto = service.selectHAni(h_regi);
-		model.addAttribute("HObj", oDto);
-		return "serchReserDetail";
 	}
 	
 

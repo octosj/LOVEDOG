@@ -58,6 +58,9 @@
 		</table>
 		
 	<input type="button" name="btn" value="뒤로가기" onclick="back()">
+
+	<input type="button" name="btn" value="권한변경" onclick="changeHospital()">
+
 	
 	<script type="text/javascript">
 		function back() {

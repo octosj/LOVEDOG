@@ -79,6 +79,10 @@ function objChk() {
 // 	alert(vald);
 }
 
+$(function () {
+	$("")
+})
+
 </script>
 <script type="text/javascript"></script>
 <title>사랑하개</title>
@@ -100,22 +104,10 @@ function objChk() {
 		<div>
 			예약 검색
 			<form action="./serchReser.do">
-				<input type="text" class="calenderBtn" name="r_date"><br>
-			<select name="time">
-				<option>--예약 시간--</option>                                               
-				<option value="090000">9시</option>                                             
-				<option value="100000">10시</option>                                            
-				<option value="110000">11시</option>                                            
-				<option value="120000">12시</option>                                            
-				<option value="130000">13시</option>                                            
-				<option value="140000">14시</option>                                            
-				<option value="150000">15시</option>                                            
-				<option value="160000">16시</option>                                            
-				<option value="170000">17시</option>                                            
-				<option value="180000">18시</option>                                            
-				<option value="190000">19시</option>                                            
-				<option value="200000">20시</option>
-			</select>
+				<input type="text" class="calender" value="날짜를 입력하세요" readonly="readonly">
+				<input type="hidden" class="calender" name="r_date">
+				<input type="hidden" class="calenderBtn"><br>
+				
 			<select id="obj" onchange="objChk()" name="main_obj">
 			<c:forEach items="${lists}" var="code">
 				<option value="${code.main_obj}">${code.obj_code}</option>

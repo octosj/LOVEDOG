@@ -82,6 +82,8 @@ public class HospiController {
 //		model.addAttribute("HObj", oDto);
 		boolean hdto = service.insertHospital(dto);
 		model.addAttribute("hdto", dto);
+
+
 		return null;
 	}
 	

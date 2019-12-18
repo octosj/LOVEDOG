@@ -8,7 +8,6 @@ public interface Login_IService {
 
 	public User_Dto loginUser(Map<String, String> map);
 	
+	
 	public boolean duplicateidCheck(String id);
-
-	public boolean registUser(Map<String, String> map);
 }

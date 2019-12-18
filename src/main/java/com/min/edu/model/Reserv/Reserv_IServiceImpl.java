@@ -22,7 +22,7 @@ public class Reserv_IServiceImpl implements Reserv_IService {
 	Logger logger = LoggerFactory.getLogger(Reserv_IServiceImpl.class);
 
 	@Override
-	public List<Hospi_Dto> selectHObj(String h_regi) {
+	public List<Obj_Dto> selectHObj(String h_regi) {
 		logger.info("selectHObj 실행 : \t{}",h_regi);
 		return dao.selectHObj(h_regi);
 	}
@@ -67,12 +67,6 @@ public class Reserv_IServiceImpl implements Reserv_IService {
 	public List<AllObj_Dto> selectAllODetail(String main_obj) {
 		logger.info("selectAllODetail 실행 : \t{}",main_obj);
 		return dao.selectAllODetail(main_obj);
-	}
-
-	@Override
-	public Hospi_Dto selectOneHospital2(String h_regi) {
-		logger.info("selectOneHospital2 실행 : \t{}",h_regi);
-		return dao.selectOneHospital2(h_regi);
 	}
 
 }
