@@ -16,6 +16,7 @@ public class Hospi_Dto implements Serializable{
    private String obj_code ;
    private String main_obj;
    private String main_ani;
+   private String ani_code;
    
    public Hospi_Dto() {
       // TODO Auto-generated constructor stub
@@ -101,27 +102,41 @@ public class Hospi_Dto implements Serializable{
       this.main_ani = main_ani;
    }
 
-   public Hospi_Dto(String h_name, String h_address, String h_phone, String h_mail, String h_regi, String u_id,
-         String h_enable, String obj_code, String main_obj, String main_ani) {
-      super();
-      this.h_name = h_name;
-      this.h_address = h_address;
-      this.h_phone = h_phone;
-      this.h_mail = h_mail;
-      this.h_regi = h_regi;
-      this.u_id = u_id;
-      this.h_enable = h_enable;
-      this.obj_code = obj_code;
-      this.main_obj = main_obj;
-      this.main_ani = main_ani;
+   public String getAni_code() {
+	   return ani_code;
+   }
+   
+   public void setAni_code(String ani_code) {
+	   this.ani_code = ani_code;
    }
 
-   @Override
-   public String toString() {
-      return "Hospi_Dto [h_name=" + h_name + ", h_address=" + h_address + ", h_phone=" + h_phone + ", h_mail="
-            + h_mail + ", h_regi=" + h_regi + ", u_id=" + u_id + ", h_enable=" + h_enable + ", obj_code=" + obj_code
-            + ", main_obj=" + main_obj + ", main_ani=" + main_ani + "]";
-   }
+   
+	public Hospi_Dto(String h_name, String h_address, String h_phone, String h_mail, String h_regi, String u_id,
+			String h_enable, String obj_code, String main_obj, String main_ani, String ani_code) {
+		super();
+		this.h_name = h_name;
+		this.h_address = h_address;
+		this.h_phone = h_phone;
+		this.h_mail = h_mail;
+		this.h_regi = h_regi;
+		this.u_id = u_id;
+		this.h_enable = h_enable;
+		this.obj_code = obj_code;
+		this.main_obj = main_obj;
+		this.main_ani = main_ani;
+		this.ani_code = ani_code;
+	}
+
+	
+	@Override
+	public String toString() {
+		return "Hospi_Dto [h_name=" + h_name + ", h_address=" + h_address + ", h_phone=" + h_phone + ", h_mail=" + h_mail
+				+ ", h_regi=" + h_regi + ", u_id=" + u_id + ", h_enable=" + h_enable + ", obj_code=" + obj_code
+				+ ", main_obj=" + main_obj + ", main_ani=" + main_ani + ", ani_code=" + ani_code + "]";
+	}
+   
+   
+
    
    
 
