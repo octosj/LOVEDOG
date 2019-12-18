@@ -26,7 +26,7 @@ tr, td {
 	List<User_Dto> lists =(List<User_Dto>)request.getAttribute("lists");
 %>
 <body>
-
+	<jsp:include page="./header.jsp"></jsp:include>
 	<div>
 		<table>
 			<tr>
@@ -36,6 +36,7 @@ tr, td {
 				<th>이름</th>
 				<th>전화번호</th>
 				<th>이메일</th>
+				<th>삭제 여부</th>
 				<th>권한</th>
 			</tr>
 			<%
@@ -43,13 +44,12 @@ tr, td {
 		%>
 
 			<tr>
-				<td><input type="checkbox" name="chk"
-					value="<%=dto.getU_id()%>"></td>
-				<td><a href="mainOne.do?u_id=<%=dto.getU_id()%>"> <%=dto.getU_id()%>
-				</a></td>
+				<td><input type="checkbox" name="chk" value="<%=dto.getU_id()%>"></td>
+				<td><%=dto.getU_id()%> </td>
 				<td><%=dto.getU_name()%></td>
 				<td><%=dto.getU_phone()%></td>
 				<td><%=dto.getU_email()%></td>
+				<td><%=dto.getU_enable()%></td>
 				<td><%=dto.getU_auth()%></td>
 			</tr>
 			<%

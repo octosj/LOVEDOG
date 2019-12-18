@@ -29,9 +29,17 @@ public class Login_IDaoImpl implements Login_IDao {
 
 	@Override
 	public boolean duplicateidCheck(String id) {
-		log.info("*********[duplicateidCheck] Dao 접근 시작 {}*********");
+		log.info("*********[duplicateidCheck] Dao 접근 시작 {}*********{}",id);
 		int cnt = sqlSession.selectOne(NS+"duplicated", id);
 		return cnt==1?false:true;
 	}
+
+	@Override
+	public boolean registUser(Map<String, String> map) {
+		log.info("*********[registUser] Dao 접근 시작 {}*********",map);
+		int cnt = sqlSession.insert(NS+"registUser", map);
+		return cnt>0?true:false;
+	}
+
 
 }

@@ -26,9 +26,6 @@ UPDATE USER_U
  SET U_AUTH='U'
   WHERE U_ID=#{u_id}
 </update>
-<select id="Mypage" resultType="Udto">
-	SELECT U_ID, U_NAME, U_EMAIL, U_PHONE
-		FROM USER_U
-</select>
+
 
 </mapper>
