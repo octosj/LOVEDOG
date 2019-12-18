@@ -48,4 +48,10 @@ public class User_IServiceImpl implements User_IService {
 		return dao.UserModify(dto);
 	}
 
+	@Override
+	public User_Dto Mypage() {
+		log.info("Mypage 회원 마이페이지 \t {}", new Date());
+		return dao.Mypage();
+	}
+
 }

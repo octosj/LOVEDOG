@@ -33,8 +33,10 @@ public class UserController {
 		return "index";
 	}
 	@RequestMapping(value = "/Mypage.do", method = RequestMethod.GET)
-	public String Mypage() {
+	public String Mypage(Model model) {
 		log.info("Mypage 마이페이지 이동", new Date());
+		User_Dto dto = service.Mypage();
+		model.addAttribute("dto", dto);
 		return "Mypage";
 	}
 	@RequestMapping(value = "/main.do", method = RequestMethod.GET)
