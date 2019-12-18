@@ -10,4 +10,7 @@ public interface Login_IDao {
 	
 	public boolean duplicateidCheck(String id);
 	
+	public boolean registUser(Map<String, String> map);
+
+	
 }
