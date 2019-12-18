@@ -1,3 +1,4 @@
+
 package com.min.edu.ctrl;
 
 import java.util.Date;
@@ -74,4 +75,5 @@ public class UserController {
 		log.info("modifyUserForm 회원 수정 페이지 이동", new Date());
 		return "HospiList";
 	}
+
 }

@@ -27,8 +27,6 @@
 					<th>병원이름</th>
 					<th>전화번호</th>
 					<th>이메일</th>
-					<th>진료과</th>
-					<th>진료동물</th>
 					<th>사업자등록증</th>
 					<th>권한</th>
 					
@@ -42,15 +40,13 @@
 				%>
 			
 		<tr>
-			<td><%=dto.getU_id() %></td>
+			<td><a href="./detailHospital.do?u_id=<%=dto.getU_id() %>"><%=dto.getU_id() %></a></td>
 			<td><%=dto.getH_name() %></td>
 			<td><%=dto.getH_phone() %></td>
 			<td><%=dto.getH_mail() %></td>
-			<td></td>
-			<td></td>
 			<td><%=dto.getH_regi() %></td>
 			<td><%=dto.getH_enable() %></td>
-			<td><button onclick="changeAuth('<%=dto.getU_id()%>')">권한변경</button></td>
+<%-- 			<td><button onclick="changeAuth('<%=dto.getU_id()%>')">권한변경</button></td> --%>
 		</tr>
 			</tbody>
 			
@@ -63,7 +59,6 @@
 		
 	<input type="button" name="btn" value="뒤로가기" onclick="back()">
 	<input type="button" name="btn" value="권한변경" onclick="changeHospital()">
-	<input type="button" name="btn" value="병원추가" onclick="addHospital()">
 	
 	<script type="text/javascript">
 		function back() {

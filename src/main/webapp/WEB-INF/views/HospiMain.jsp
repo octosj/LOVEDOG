@@ -30,7 +30,6 @@
 	<button onclick="myFunction()">profile</button>
 
 	<div id="HMdiv">
-	<span>${mDto.name}님 환영합니다.(등급:${mDto.auth=='A'?"관리자":'일반'})</span><br>
 	<a href="">회원관리</a><br>
 	<a href="./HospiList.do?u_id=ADMIN">병원관리</a><br>
 	<a href="">예약관리</a><br>

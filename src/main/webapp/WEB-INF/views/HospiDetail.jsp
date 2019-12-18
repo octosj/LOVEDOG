@@ -1,3 +1,4 @@
+<%@page import="com.min.edu.dto.Reserv_Dto"%>
 <%@page import="com.min.edu.dto.Hospi_Dto"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -7,54 +8,65 @@
 <head>
 <meta charset="UTF-8">
 <style type="text/css"></style>
-<title>병원상세페이지</title>
+<title>병원 상세보기 페이지</title>
 <%
-		Hospi_Dto obj = (Hospi_Dto)request.getAttribute("dto");
+Hospi_Dto hdto = (Hospi_Dto)request.getAttribute("dto");
 %>
 
 </head>
 <body>
 	<jsp:include page="./header.jsp"/>
 
-<%-- ${dto} --%>
-	<div class="HListDiv">
-	<form action="./addHospital.do" method="post">
-	<table id="HList">
+	<form action="./addHospital.do?u_id=<%=hdto.getU_id()%>" method="post">
+	<table>
 		<thead>
 				<tr>
 					<th>사업자등록증</th>
-					<td>a</td>
+					<td></td>
 				</tr>
+		</thead>
+		<tbody>
 				<tr>
 					<th>회원아이디</th>
-					<td>병원 이름</td>
-					<td></td>
-					<td>전화번호</td>
-					<td>이메일</td>
+					<td><%=hdto.getU_id()%></td>
 				</tr>
-			</thead>
-				
-			<tbody>
 				<tr>
-<%-- 					<td><input type="hidden" name="id" value="<%=hdto.getId()%>"><%=hdto.getId()%></td> --%>
-<%-- 					<td><input type="text" name="address" id="address" value="<%=hdto.getAddress()%>"></td> --%>
-<%-- 					<td><input type="text" name="name" id="name" value="<%=hdto.getName()%>"></td> --%>
-<%-- 					<td><input type="text" name="phone" id="phone" value="<%=hdto.getPhone()%>"></td> --%>
-<%-- 					<td><input type="text" name="email" id="email" value="<%=hdto.getEmail()%>"></td> --%>
+					<th>병원이름</th>
+					<td><%=hdto.getH_name()%></td>
 				</tr>
-			</tbody> 
+				<tr>
+					<th>주소</th>
+					<td><%=hdto.getH_address()%></td>
+				</tr>
+				<tr>
+					<th>전화번호</th>
+					<td><%=hdto.getH_phone()%></td>
+				</tr>
+				<tr>
+					<th>이메일</th>
+					<td><%=hdto.getH_mail()%></td>
+				</tr>
+				<tr>
+					<th>진료과</th>
+					<td><%=hdto.getMain_obj()%></td>
+				</tr>
+				<tr>
+					<th>진료동물</th>
+					<td><%=hdto.getMain_ani()%></td>
+				</tr>
+				<tr>
+					<th>권한수정</th>
+					<td><%=hdto.getH_enable()%></td>
+					<td><button onclick="changeAuth('<%=hdto.getU_id()%>')">권한변경</button></td>
+				</tr>
+			</tbody>
 			
-			<tfoot>
-				<tr>
-					<td colspan="5">
-						<input type="submit" value="병원추가">
-					</td>
-				</tr>
-			</tfoot>
+			
 	</table>
+			<input type="submit"  value="병원추가" >
 	</form>
 	
-	</div>
+	
 	
 	
 </body>

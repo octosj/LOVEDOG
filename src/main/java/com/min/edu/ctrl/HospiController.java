@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.min.edu.dto.Hospi_Dto;
+import com.min.edu.dto.Obj_Dto;
 import com.min.edu.dto.User_Dto;
 import com.min.edu.model.Hospi.Hospi_IService;
+import com.min.edu.model.Reserv.Reserv_IService;
 
 @Controller
 public class HospiController {
@@ -22,7 +24,11 @@ public class HospiController {
 	
 	@Autowired
 	private Hospi_IService service;
+	
+	@Autowired
+	private Reserv_IService serviceR;
 
+	
 	// 관리자 첫화면
 	@RequestMapping(value = "/mainH.do", method = RequestMethod.GET)
 	public String mainH() {
@@ -54,27 +60,33 @@ public class HospiController {
 	}
 	
 	
-	// 병원 상세보기
+	// 병원 상세조회로 이동
 	@RequestMapping(value = "/detailHospital.do", method = RequestMethod.GET)
 	public String detailHospital(Model model, String u_id) {
-		logger.info("detailHospital 병원 상세보기 \t{}", u_id);
+		logger.info("detailHospital 병원 상세조회 \t{}", u_id);
 //		Hospi_Dto dto = (Hospi_Dto)session.getAttribute("hDto");
 //		System.out.println(dto);
 		Hospi_Dto hDto = service.selectOneHospital(u_id);
 		model.addAttribute("dto", hDto);
+//		List<Obj_Dto> oDto = serviceR.selectHObj(h_regi);
+//		model.addAttribute("HObj", oDto);
 		return "HospiDetail";
 	}
 	
 	
 	// 병원 추가
 	@RequestMapping(value = "/addHospital.do", method = RequestMethod.POST)
-	public String addHospital() {
-		logger.info("HospiAwaitList \t{}", new Date());
-		
+	public String addHospital(Model model, String u_id) {
+		logger.info("addHospital 병원 추가\t{}", u_id);
+//		List<Obj_Dto> oDto = serviceR.selectHObj(h_regi);
+//		model.addAttribute("HObj", oDto);
+//		Hospi_Dto hdto = service.insertHospital(u_id);
+//		model.addAttribute("hdto", );
 		return null;
 	}
 	
 	
+	// 병원추가
 
 	
 }
