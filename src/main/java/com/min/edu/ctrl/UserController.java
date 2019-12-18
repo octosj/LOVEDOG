@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -29,14 +30,16 @@ public class UserController {
 	private User_IService service;
 	
 	@RequestMapping(value = "/index.do", method = RequestMethod.GET)
-	public String index() {
+	public String index(HttpSession session,Model model) {
 		log.info("index 메인 페이지 이동", new Date());
+		User_Dto Udto = (User_Dto) session.getAttribute("user");
+		model.addAttribute("Udto", Udto);
 		return "index";
 	}
 	@RequestMapping(value = "/Mypage.do", method = RequestMethod.GET)
-	public String Mypage(Model model) {
+	public String Mypage(Model model, String u_id) {
 		log.info("Mypage 마이페이지 이동", new Date());
-		User_Dto dto = service.Mypage();
+		User_Dto dto = service.SelectOneuser(u_id);
 		model.addAttribute("dto", dto);
 		return "Mypage";
 	}
@@ -47,17 +50,10 @@ public class UserController {
 		model.addAttribute("lists", lists);
 		return "UserList";
 	}
-	@RequestMapping(value = "/mainOne.do", method = RequestMethod.GET)
-	public String UserOneList(Model model, String u_id) {
-		User_Dto dto = service.SelectOneuser(u_id);
-		log.info("UserOneList 회원 상세 조회 페이지 이동 \t {}", dto);
-		model.addAttribute("dto", dto);
-		return "UserOneList";
-	}
 	@RequestMapping(value = "/delete.do", method = RequestMethod.GET)
 	public String delete(HttpSession session) {
 		log.info("delete 회원 삭제 / 탈퇴", new Date());
-		User_Dto dto = (User_Dto) session.getAttribute("Dto");
+		User_Dto dto = (User_Dto) session.getAttribute("user");
 		log.info("delete 회원 삭제 / 탈퇴 {}", dto);
 		boolean isc = service.DeleteUser(dto.getU_id());
 		return isc?"redirect:/index.do":"redirect:/delete.do";
@@ -73,7 +69,11 @@ public class UserController {
 	@RequestMapping(value = "/modifyUserForm.do", method = RequestMethod.GET)
 	public String modifyUserForm(HttpSession session) {
 		log.info("modifyUserForm 회원 수정 페이지 이동", new Date());
-		return "HospiList";
+		return "UserModify";
 	}
-
+	@RequestMapping(value = "/AuthChange.do", method = RequestMethod.GET)
+	public String AuthChange() {
+		log.info("AuthChange 회원 권한 수정 페이지 이동", new Date());
+		return "AuthChange";
+	}
 }

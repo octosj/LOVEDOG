@@ -43,8 +43,8 @@ ${dto}
 		<form action="./modifyUser.do" method="post" onsubmit="return submitCheck()">
 			<table>
 				<tr>
-					<th>아이디</th>
-					<td><input type="text" id="u_id" value="${dto.u_id}"></td>
+					<th>이름</th>
+					<td><input type="text" id="u_id" value="${dto.u_name}"></td>
 				</tr>
 				<tr>
 					<th>비밀번호</th>
