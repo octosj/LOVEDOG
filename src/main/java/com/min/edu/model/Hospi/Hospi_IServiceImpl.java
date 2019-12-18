@@ -27,7 +27,7 @@ public class Hospi_IServiceImpl implements Hospi_IService {
 	 */
 	@Override
 	public boolean insertHospital(Hospi_Dto dto) {
-		logger.info("병원등록신청 insertHospital", new DATE());
+		logger.info("병원등록신청 insertHospital: {}", dto);
 		boolean isc = dao.insertHospital(dto);
 		return isc?true:false;
 	}

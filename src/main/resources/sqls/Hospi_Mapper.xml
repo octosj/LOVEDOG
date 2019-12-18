@@ -2,20 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="sarang.hagae">
 
-<!-- 병원 등록 신청 -->
+<!-- 병원 등록 추가 -->
 <insert id="insertHospital" parameterType="HSPdto">
 		INSERT INTO HOSPITAL(H_NAME, H_ADDRESS, H_PHONE, 
         H_MAIL, H_REGI, U_ID, H_ENABLE)
-     	VALUES(#{h_name}, #{h_address}, #{h_phone}, #{h_mail}, #{h_regi},  #{u_id}, 'Y')
+     	VALUES(#{h_name}, #{h_address}, #{h_phone}, #{h_mail}, #{h_regi},  #{u_id}, 'N')
 </insert>
 
 
 <!-- 병원등록 허가 -->
 <update id="updateHospital" parameterType="HSPdto">
-		"UPDATE USER_U SET U_AUTH = 'H'
-   		WHERE U_ID = 'user2'; 
+		UPDATE USER_U SET U_AUTH = 'H'
+   		WHERE U_ID = #{u_id}
 		UPDATE HOSPITAL SET H_ENABLE='N'
-   		WHERE U_ID = 'user2'; "
+   		WHERE U_ID = #{u_id} 
 </update>
 
 
@@ -50,6 +50,7 @@
 		SELECT *
   		FROM HOSPITAL 
    		WHERE U_ID =#{u_id}
+   		
 </select>
 
 

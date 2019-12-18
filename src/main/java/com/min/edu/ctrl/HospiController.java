@@ -62,29 +62,28 @@ public class HospiController {
 	
 	// 병원 상세조회로 이동
 	@RequestMapping(value = "/detailHospital.do", method = RequestMethod.GET)
-	public String detailHospital(Model model, String u_id) {
+	public String detailHospital(Model model, String u_id, String h_regi) {
 		logger.info("detailHospital 병원 상세조회 \t{}", u_id);
-//		Hospi_Dto dto = (Hospi_Dto)session.getAttribute("hDto");
-//		System.out.println(dto);
+//		List<Hospi_Dto> oDto = serviceR.selectHObj(h_regi);
+//		model.addAttribute("HObj", oDto);
 		Hospi_Dto hDto = service.selectOneHospital(u_id);
 		model.addAttribute("dto", hDto);
-//		List<Obj_Dto> oDto = serviceR.selectHObj(h_regi);
-//		model.addAttribute("HObj", oDto);
 		return "HospiDetail";
 	}
 	
 	
-	// 병원 추가
+	// 병원상세 -> 병원 추가완료
 	@RequestMapping(value = "/addHospital.do", method = RequestMethod.POST)
-	public String addHospital(Hospi_Dto dto , Model model, String u_id) {
+	public String addHospital(Hospi_Dto dto , String u_id) {
 		logger.info("addHospital 병원 추가\t{}", u_id);
-//		List<Obj_Dto> oDto = serviceR.selectHObj(h_regi);
-//		model.addAttribute("HObj", oDto);
-		boolean hdto = service.insertHospital(dto);
-		model.addAttribute("hdto", dto);
-
-
-		return null;
+		
+//		Hospi_Dto hdto = service.
+//		model.addAttribute("hdto", dto);
+//		Hospi_Dto dto = (Hospi_Dto)session.getAttribute("hDto");
+		System.out.println(dto);
+		boolean isc = service.insertHospital(dto);
+		
+		return isc?"redirect:/HospiList.do?u_id="+u_id:"redirect:/detailHospital.do";
 	}
 	
 	
