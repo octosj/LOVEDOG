@@ -42,9 +42,10 @@ tr, td {
 		</table>
 		<div>
 			<tr>
-					<input type="button" value="회원 수정" onclick="UserModify()">
-					<input type="button" value="회원 탈퇴" onclick="deleteForm()">
-				<td><input type="button" value="메인 으로" onclick="back()">
+			<td>
+				<input type="button" value="회원 수정" onclick="UserModify()">
+				<input type="button" value="회원 탈퇴" onclick="deleteForm()">
+				<input type="button" value="메인 으로" onclick="back()">
 				</td>
 			</tr>
 		</div>

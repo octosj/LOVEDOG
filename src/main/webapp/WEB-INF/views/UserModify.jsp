@@ -33,7 +33,7 @@
 	}
 	</script>
 <body>
-${dto}
+
 	<div>
 		<img alt="돌아가기" src="">
 		<h2 align="right">병원 정보 게시판</h2>
@@ -44,28 +44,34 @@ ${dto}
 			<table>
 				<tr>
 					<th>이름</th>
-					<td><input type="text" id="u_id" value="${dto.u_name}"></td>
+					<td><input type="text" id="u_id" value="${sessionScope.user.u_name}"></td>
 				</tr>
 				<tr>
 					<th>비밀번호</th>
-					<td><input type="text" id="u_password" value="${dto.u_password}"></td>
+					<td><input type="text" id="u_password" value="${sessionScope.user.u_password}"></td>
 				</tr>
 				<tr>
 					<th>이메일</th>
-					<td><input type="email" id="u_email" value="${dto.u_email}"></td>
+					<td><input type="email" id="u_email" value="${sessionScope.user.u_email}"></td>
 				</tr>
 				<tr>
 					<th>전화번호</th>
-					<td><input type="text" id="u_phone" value="${dto.u_phone}"></td>
+					<td><input type="text" id="u_phone" value="${sessionScope.user.u_phone}"></td>
 				</tr>
 			</table>
 			
 			<tr>
 				<td>
-					<input type="submit" value="작성 완료">
+					<input type="submit" value="작성완료">
+					<input type="button" value="뒤로가기" onclick="back()">
 				</td>
 			</tr>
 		</form>
 	</div>
+	<script type="text/javascript">
+	function back() {
+		location.href="index.do";
+	}
+	</script>
 </body>
 </html>
