@@ -34,9 +34,6 @@ public interface Reserv_IDao {
 	//전체 진료 상세 조회
 	public List<AllObj_Dto> selectAllODetail(String main_obj);
 	
-	//병원 상세조회
-	public Hospi_Dto selectOneHospital2(String h_regi);
-	
 	//병원 예약 조회
 	public Reserv_Dto selectR_Date(String h_regi);
 

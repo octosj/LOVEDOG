@@ -11,7 +11,11 @@
 <script type="text/javascript">
 	function r_dateChk() {
 		var r_date = $("#r_date");
-		alert(r_date)
+// 		alert(r_date)
+		var r_date_option;
+		for (var i = 0; i < array.length; i++) {
+			
+		}
 	}
 </script>
 </head>

@@ -21,7 +21,7 @@ public class Reserv_IDaoImpl implements Reserv_IDao {
 	String NS = "sarang.hagae.reser.";
 
 	@Override
-	public List<Hospi_Dto> selectHObj(String h_regi) {
+	public List<Obj_Dto> selectHObj(String h_regi) {
 		
 		return session.selectList(NS+"selectHObj", h_regi);
 	}
@@ -66,12 +66,6 @@ public class Reserv_IDaoImpl implements Reserv_IDao {
 	public List<AllObj_Dto> selectAllODetail(String main_obj) {
 		
 		return session.selectList(NS+"selectAllODetail", main_obj);
-	}
-
-	@Override
-	public Hospi_Dto selectOneHospital2(String h_regi) {
-		
-		return session.selectOne(NS+"selectOneHospital2", h_regi);
 	}
 
 	@Override
