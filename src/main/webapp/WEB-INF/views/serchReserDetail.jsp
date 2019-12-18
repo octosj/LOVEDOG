@@ -11,6 +11,13 @@
 %>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+	function insertReser(dd) {
+// 		alert(dd);
+		location.href="./insertReserForm.do?h_regi="+dd;
+	}
+
+</script>
 </head>
 <body>
 <table id="HList">
@@ -23,6 +30,8 @@
 					<th>이메일</th>
 					<th>주소</th>
 					<th>사업자등록증</th>
+					<th>진료과</th>
+					<th>진료동물</th>
 <!-- 					<th>권한변경</th> -->
 				</tr>
 			</thead>
@@ -36,16 +45,31 @@
 			<td>${hDetail.h_regi}</td>
 		</tr>
 		<tr>
-			<th>진료과</th>
-			<th>진료동물</th>
 		</tr>
 			<c:forEach items="${HObj}" var="ODto">
 		<tr>
-			<td>${ODto.ani_code}</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>${ODto.obj_code}</td>
+		</tr>
+			</c:forEach>
+			<c:forEach items="${HAni}" var="ADto">
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>${ADto.ani_code}</td>
 		</tr>
 			</c:forEach>
 			</tbody>
 		</table>
-			<button onclick="insertReser()">예약 신청</button>
+			<button onclick="insertReser('${hDetail.h_regi}')">예약 신청</button>
+<%-- 			${HObj} --%>
+${hDetail.h_regi}
 </body>
 </html>

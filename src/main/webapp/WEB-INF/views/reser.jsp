@@ -89,7 +89,6 @@ function objChk() {
 <body>
 	<div>
 		<div>
-			<a>예약 신청</a>
 			<a>예약 조회 : 병원</a>
 			<a>예약 조회 : 사용자</a>
 			<a>예약 수정</a>

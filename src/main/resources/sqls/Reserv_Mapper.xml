@@ -3,29 +3,19 @@
 <mapper namespace="sarang.hagae.reser">
 
 <!-- 병원 진료 과 조회 -->
-<select id="selectHObj" resultType="Odto" parameterType="java.lang.String">
-	SELECT H_NAME ,OBJ_CONTENT, OBJ_CODE, HL.H_REGI H_REGI
-	FROM HOSPITAL HL JOIN (SELECT H.H_REGI, OBJ_CODE,OBJ_CONTENT  
-	FROM 
-		H_CODE_OBJ H JOIN (SELECT OBJ_CODE, OBJ.OBJ_CONTENT,OC.MAIN_OBJ MAIN_OBJ
-					FROM O_CODE OC JOIN OBJ
-						ON OC.MAIN_OBJ = OBJ.MAIN_OBJ) J
-			ON H.MAIN_OBJ = J.MAIN_OBJ) HC
-	ON HL.H_REGI = HC.H_REGI
-	WHERE HL.H_REGI=#{h_regi}
+<select id="selectHObj" resultType="HSPdto" parameterType="java.lang.String">
+	SELECT A.MAIN_OBJ, C.OBJ_CODE 
+	FROM HOSPITAL H 
+	JOIN H_CODE_OBJ A ON H.H_REGI=A.H_REGI 
+	JOIN O_CODE C ON A.MAIN_OBJ=C.MAIN_OBJ WHERE H.H_REGI=#{h_regi}
 </select>
 
 <!-- 병원 동물 조회 -->
-<select id="selectHAni" resultType="Adto" parameterType="java.lang.String">
-	SELECT H_NAME ,ANI_CONTENT,ANI_CODE,HL.H_REGI
-	FROM HOSPITAL HL JOIN (SELECT H.H_REGI, ANI_CODE,ANI_CONTENT  
-	FROM 
-		H_CODE_ANI H JOIN (SELECT ANI_CODE, ANI.ANI_CONTENT,AC.MAIN_ANI MAIN_ANI
-					FROM A_CODE AC JOIN ANI
-						ON AC.MAIN_ANI = ANI.MAIN_ANI) J
-			ON H.MAIN_ANI = J.MAIN_ANI) HC
-	ON HL.H_REGI = HC.H_REGI
-	WHERE HL.H_REGI=#{h_regi}
+<select id="selectHAni" resultType="HSPdto" parameterType="java.lang.String">
+	SELECT A.MAIN_ANI, C.ANI_CODE 
+	FROM HOSPITAL H 
+	JOIN H_CODE_ANI A ON H.H_REGI=A.H_REGI 
+	JOIN A_CODE C ON A.MAIN_ANI=C.MAIN_ANI WHERE H.H_REGI=#{h_regi}
 </select>
 
 <!-- 예약 검색 -->
@@ -78,5 +68,10 @@ SELECT * FROM OBJ WHERE MAIN_OBJ=#{Main_obj}
 		SELECT *
   		FROM HOSPITAL 
    		WHERE H_REGI=#{h_regi}
+</select>
+
+<!-- 병원 예약 시간 조회 -->
+<select id="selectR_Date" resultType="Rdto" parameterType="java.lang.String">
+	SELECT TO_CHAR(R_DATE,'YYYYMMDDHH24MISS') R_CONTENT, U_ID FROM RESERVATION WHERE H_REGI=#{h_regi}
 </select>
 </mapper>

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.min.edu.dto.AllObj_Dto;
 import com.min.edu.dto.Hospi_Dto;
 import com.min.edu.dto.Obj_Dto;
+import com.min.edu.dto.Reserv_Dto;
 import com.min.edu.model.Hospi.Hospi_IService;
 import com.min.edu.model.Reserv.Reserv_IService;
 
@@ -73,10 +74,30 @@ public class ReservController {
 		Hospi_Dto dto = service.selectOneHospital2(h_regi);
 		model.addAttribute("hDetail",dto);
 		log.info("selectOneHospital2 list 작동\t:{}",dto);
-		List<Obj_Dto> oDto = service.selectHAni(h_regi);
+		List<Hospi_Dto> aDto = service.selectHAni(h_regi);
+		List<Hospi_Dto> oDto = service.selectHObj(h_regi);
+		model.addAttribute("HAni", aDto);
 		model.addAttribute("HObj", oDto);
 		return "serchReserDetail";
 	}
+	
+	@RequestMapping(value = "/insertReserForm.do",method = RequestMethod.GET)
+	public String insertReserForm(String h_regi, Model model) {
+		log.info("sReserList_detail 작동\t:{}",h_regi);
+		Hospi_Dto dto = service.selectOneHospital2(h_regi);
+		model.addAttribute("hDetail",dto);
+		log.info("selectOneHospital2 list 작동\t:{}",dto);
+		List<Hospi_Dto> aDto = service.selectHAni(h_regi);
+		List<Hospi_Dto> oDto = service.selectHObj(h_regi);
+		Reserv_Dto rDto = service.selectR_Date(h_regi);
+		System.out.println(rDto);
+		
+		model.addAttribute("h_regi", rDto);
+		model.addAttribute("HAni", aDto);
+		model.addAttribute("HObj", oDto);
+		return "insertReserForm";
+	}
+	
 	
 
 }

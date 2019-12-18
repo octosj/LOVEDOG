@@ -28,7 +28,7 @@ public class Reserv_IServiceImpl implements Reserv_IService {
 	}
 
 	@Override
-	public List<Obj_Dto> selectHAni(String h_regi) {
+	public List<Hospi_Dto> selectHAni(String h_regi) {
 		logger.info("selectHAni 실행 : \t{}",h_regi);
 		return dao.selectHAni(h_regi);
 	}
@@ -73,6 +73,12 @@ public class Reserv_IServiceImpl implements Reserv_IService {
 	public Hospi_Dto selectOneHospital2(String h_regi) {
 		logger.info("selectOneHospital2 실행 : \t{}",h_regi);
 		return dao.selectOneHospital2(h_regi);
+	}
+
+	@Override
+	public Reserv_Dto selectR_Date(String h_regi) {
+		logger.info("selectR_Date실행 : \t{}",h_regi);
+		return dao.selectR_Date(h_regi);
 	}
 
 }

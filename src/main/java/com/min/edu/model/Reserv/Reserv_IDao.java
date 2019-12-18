@@ -14,7 +14,7 @@ public interface Reserv_IDao {
 	public List<Hospi_Dto> selectHObj(String h_regi);
 	
 	//병원 진료 동물 조회
-	public List<Obj_Dto> selectHAni(String h_regi);
+	public List<Hospi_Dto> selectHAni(String h_regi);
 	
 	//예약 검색
 	public List<Hospi_Dto> serchReser(Map<String, String> map);
@@ -36,5 +36,8 @@ public interface Reserv_IDao {
 	
 	//병원 상세조회
 	public Hospi_Dto selectOneHospital2(String h_regi);
+	
+	//병원 예약 조회
+	public Reserv_Dto selectR_Date(String h_regi);
 
 }
