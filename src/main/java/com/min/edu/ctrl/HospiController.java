@@ -76,12 +76,14 @@ public class HospiController {
 	
 	// 병원 추가
 	@RequestMapping(value = "/addHospital.do", method = RequestMethod.POST)
-	public String addHospital(Model model, String u_id) {
+	public String addHospital(Hospi_Dto dto , Model model, String u_id) {
 		logger.info("addHospital 병원 추가\t{}", u_id);
 //		List<Obj_Dto> oDto = serviceR.selectHObj(h_regi);
 //		model.addAttribute("HObj", oDto);
-//		Hospi_Dto hdto = service.insertHospital(u_id);
-//		model.addAttribute("hdto", );
+		boolean hdto = service.insertHospital(dto);
+		model.addAttribute("hdto", dto);
+
+
 		return null;
 	}
 	

@@ -58,23 +58,15 @@
 		</table>
 		
 	<input type="button" name="btn" value="뒤로가기" onclick="back()">
+
 	<input type="button" name="btn" value="권한변경" onclick="changeHospital()">
+
 	
 	<script type="text/javascript">
 		function back() {
 			location.href="./HospiList.do";
 		}
 		
-		function changeHospital(id) {
-			alert("사업자등록증을 확인하세요.");
-			location.href="./changeHospital?id="+id;
-		}
-		
-		function addHospital(id) {
-			location.href="./addHospital?id="+id;
-		}
-	
-	
 	</script>
 
 	</div>

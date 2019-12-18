@@ -49,21 +49,33 @@ Hospi_Dto hdto = (Hospi_Dto)request.getAttribute("dto");
 				<tr>
 					<th>진료과</th>
 					<td><%=hdto.getMain_obj()%></td>
+
 				</tr>
 				<tr>
 					<th>진료동물</th>
 					<td><%=hdto.getMain_ani()%></td>
 				</tr>
+				
 				<tr>
 					<th>권한수정</th>
 					<td><%=hdto.getH_enable()%></td>
-					<td><button onclick="changeAuth('<%=hdto.getU_id()%>')">권한변경</button></td>
+					<td>
+					<select name='chageAuth'>
+					  <option value=''>-- 권한수정 --</option>
+					  <option value='N' selected>신청완료자 : N</option>
+					  <option value='Y' selected>신청자 : Y</option>
+					</select>
+<%-- 					<button onclick="changeAuth('<%=hdto.getU_id()%>')">권한변경</button> --%>
+					</td>
 				</tr>
+
+
 			</tbody>
 			
 			
 	</table>
 			<input type="submit"  value="병원추가" >
+
 	</form>
 	
 	
