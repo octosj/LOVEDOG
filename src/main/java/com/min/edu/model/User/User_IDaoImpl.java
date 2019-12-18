@@ -42,4 +42,9 @@ public class User_IDaoImpl implements User_IDao {
 		int n = session.update(NS+"UserModify", dto);
 		return (n>0)?true:false;
 	}
+
+	@Override
+	public User_Dto Mypage() {
+		return session.selectOne(NS+"Mypage");
+	}
 }
