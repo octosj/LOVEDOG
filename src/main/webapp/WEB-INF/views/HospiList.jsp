@@ -1,16 +1,3 @@
-
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>병원관리페이지</title>
-</head>
-<body>
-
-</body>
-
 <%@page import="com.min.edu.dto.Hospi_Dto"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -24,7 +11,6 @@
 <%
 		Object obj = request.getAttribute("lists");
 		List<Hospi_Dto> lists = (List<Hospi_Dto>) obj;
-// 		Hospi_Dto Hdto = (Hospi_Dto)request.getAttribute("lists");
 %>
 
 </head>
@@ -43,23 +29,24 @@
 					<th>이메일</th>
 					<th>사업자등록증</th>
 					<th>권한</th>
-<!-- 					<th>권한변경</th> -->
 				</tr>
 			</thead>
 			
 			<tbody>
+			
 				<% 
 					for(Hospi_Dto dto : lists){
 				%>
 			
 		<tr>
-			<td><a href="./detailHospital.do?u_id"+<%=dto.getU_id() %>><%=dto.getU_id() %></a></td>
+			<td><a href="./detailHospital.do?u_id="<%=dto.getU_id() %>><%=dto.getU_id() %></a></td>
 			<td><a><%=dto.getH_name() %></a></td>
 			<td><a><%=dto.getH_phone() %></a></td>
 			<td><a><%=dto.getH_mail() %></a></td>
 			<td><a><%=dto.getH_regi() %></a></td>
 			<td><a><%=dto.getH_enable() %></a></td>
 		</tr>
+		
 			</tbody>
 			
 				<%
@@ -74,7 +61,9 @@
 	
 	<script type="text/javascript">
 		function awaitHospital() {
-			location.href="./regist.do";
+// 			regi = $("#hregi").val;
+// 			alert(regi);
+			location.href="./regist.do?";
 		}
 		
 		
@@ -85,5 +74,4 @@
 	
 	
 </body>
-
 </html>

@@ -16,7 +16,6 @@ public class Hospi_Dto implements Serializable{
    private String obj_code ;
    private String main_obj;
    private String main_ani;
-   private String obj_content;
    
    public Hospi_Dto() {
       // TODO Auto-generated constructor stub
@@ -102,16 +101,9 @@ public class Hospi_Dto implements Serializable{
 	      this.obj_code = obj_code;
 	}
    
-   public String getObj_content() {
-	   return obj_content;
-   }
-   
-   public void setObj_content(String obj_content) {
-	   this.obj_content = obj_content;
-   }
 
    public Hospi_Dto(String h_name, String h_address, String h_phone, String h_mail, String h_regi, String u_id,
-         String h_enable, String obj_code, String main_obj, String main_ani, String obj_content) {
+         String h_enable, String obj_code, String main_obj, String main_ani) {
       super();
       this.h_name = h_name;
       this.h_address = h_address;
@@ -123,14 +115,13 @@ public class Hospi_Dto implements Serializable{
       this.obj_code = obj_code;
       this.main_obj = main_obj;
       this.main_ani = main_ani;
-      this.obj_content = obj_content;
    }
 
 @Override
 public String toString() {
 	return "Hospi_Dto [h_name=" + h_name + ", h_address=" + h_address + ", h_phone=" + h_phone + ", h_mail=" + h_mail
 			+ ", h_regi=" + h_regi + ", u_id=" + u_id + ", h_enable=" + h_enable + ", obj_code=" + obj_code
-			+ ", main_obj=" + main_obj + ", main_ani=" + main_ani + ", obj_content=" + obj_content + "]";
+			+ ", main_obj=" + main_obj + ", main_ani=" + main_ani ;
 }
 
  
