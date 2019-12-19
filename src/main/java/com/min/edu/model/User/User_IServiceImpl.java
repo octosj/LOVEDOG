@@ -54,4 +54,5 @@ public class User_IServiceImpl implements User_IService {
 		return dao.Mypage();
 	}
 
+
 }

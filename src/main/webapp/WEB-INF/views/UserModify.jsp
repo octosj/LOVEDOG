@@ -1,3 +1,5 @@
+
+<%@page import="com.min.edu.dto.User_Dto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -6,7 +8,43 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<script type="text/javascript">
+	<%
+		User_Dto dto =(User_Dto)request.getAttribute("dto");
+	%>
+<body>
+
+	
+	<h1>수정 화면</h1>
+	<div>
+		<form action="./modifyUser.do" method="post" onsubmit="return submitCheck()">
+			<table>
+				<tr>
+					<th>아이디</th>
+					<td><input type="text" id="u_id" value="${sessionScope.dto.u_id}"></td>
+				</tr>
+				<tr>
+					<th>비밀번호</th>
+					<td><input type="password" id="u_password" value="${sessionScope.dto.u_password}"></td>
+				</tr>
+				<tr>
+					<th>이메일</th>
+					<td><input type="email" id="u_email" value="${sessionScope.dto.u_email}"></td>
+				</tr>
+				<tr>
+					<th>전화번호</th>
+					<td><input type="text" id="u_phone" value="${sessionScope.dto.u_phone}"></td>
+				</tr>
+			</table>
+			
+			<tr>
+				<td>
+					<input type="submit" value="작성완료">
+					<input type="button" value="뒤로가기" onclick="back()">
+				</td>
+			</tr>
+		</form>
+	</div>
+	<script type="text/javascript">
 	function submitCheck(){
 // 		alert("작동");
 		var password = document.getElementById("password");
@@ -31,46 +69,8 @@
 		}
 		return true;
 	}
-	</script>
-<body>
-
-	<div>
-		<img alt="돌아가기" src="">
-		<h2 align="right">병원 정보 게시판</h2>
-	</div>
-	<h1>수정 화면</h1>
-	<div>
-		<form action="./modifyUser.do" method="post" onsubmit="return submitCheck()">
-			<table>
-				<tr>
-					<th>이름</th>
-					<td><input type="text" id="u_id" value="${sessionScope.user.u_name}"></td>
-				</tr>
-				<tr>
-					<th>비밀번호</th>
-					<td><input type="text" id="u_password" value="${sessionScope.user.u_password}"></td>
-				</tr>
-				<tr>
-					<th>이메일</th>
-					<td><input type="email" id="u_email" value="${sessionScope.user.u_email}"></td>
-				</tr>
-				<tr>
-					<th>전화번호</th>
-					<td><input type="text" id="u_phone" value="${sessionScope.user.u_phone}"></td>
-				</tr>
-			</table>
-			
-			<tr>
-				<td>
-					<input type="submit" value="작성완료">
-					<input type="button" value="뒤로가기" onclick="back()">
-				</td>
-			</tr>
-		</form>
-	</div>
-	<script type="text/javascript">
 	function back() {
-		location.href="index.do";
+		location.href = "./index.do";
 	}
 	</script>
 </body>

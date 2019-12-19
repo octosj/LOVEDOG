@@ -47,4 +47,5 @@ public class User_IDaoImpl implements User_IDao {
 	public User_Dto Mypage() {
 		return session.selectOne(NS+"Mypage");
 	}
+
 }

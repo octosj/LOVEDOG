@@ -18,4 +18,5 @@ public interface User_IDao {
 	public boolean UserModify(User_Dto dto);
 	// 마이페이지
 	public User_Dto Mypage();
+	
 }
