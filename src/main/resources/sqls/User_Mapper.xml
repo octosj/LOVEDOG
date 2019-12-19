@@ -4,7 +4,7 @@
 <update id="UserModify" parameterType="Udto">
 UPDATE USER_U
  SET U_ID=#{u_id}, U_PASSWORD=#{u_password}, U_EMAIL=#{u_email}, U_PHONE=#{u_phone}
-  WHERE U_ID=#{u_id} AND U_AUTH='U'
+  WHERE U_ID=#{u_id} AND U_AUTH=#{u_auth}
 </update>
 
 <update id="DeleteUser" parameterType="java.lang.String">
@@ -23,9 +23,8 @@ SELECT U_ID, U_PASSWORD, U_NAME, U_EMAIL, U_PHONE, U_ENABLE, U_AUTH, F_NAME
 </select> 
 <update id="AuthChange" parameterType="java.util.Map">
 UPDATE USER_U
- SET U_AUTH='U'
+ SET U_AUTH=#{u_auth}
   WHERE U_ID=#{u_id}
 </update>
-
 
 </mapper>

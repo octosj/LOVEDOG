@@ -64,22 +64,18 @@ public class UserController {
 		boolean isc = service.DeleteUser(dto.getU_id());
 		return isc?"redirect:/Mypage.do?u_id="+dto.getU_id():"redirect:/delete.do";
 	}
-	@RequestMapping(value = "/modifyUser.do", method = RequestMethod.POST)
-	public String modifyUser(HttpSession session, User_Dto dto) {
-		log.info("modifyUser 회원 수정 완료 {}", dto);
-		User_Dto mdto = (User_Dto) session.getAttribute("user");
-		dto.setU_id(mdto.getU_id());
-		boolean isc = service.UserModify(dto);
-		return isc? "redirect:/mainOne.do?u_id="+dto.getU_id():"redirect:/modifyUser.do";
-	}
 	@RequestMapping(value = "/modifyUserForm.do", method = RequestMethod.GET)
 	public String modifyUserForm(HttpSession session) {
 		log.info("modifyUserForm 회원 수정 페이지 이동 {}", new Date());
 		return "UserModify";
 	}
-	@RequestMapping(value = "/AuthChange.do", method = RequestMethod.GET)
-	public String AuthChange() {
-		log.info("AuthChange 회원 권한 수정 페이지 이동 {}", new Date());
-		return "AuthChange";
+	@RequestMapping(value = "/modifyUser.do", method = RequestMethod.POST)
+	public String modifyUser(HttpSession session, User_Dto dto) {
+		log.info("modifyUser 회원 수정 완료 {}", dto);
+		User_Dto mdto = (User_Dto) session.getAttribute("user");
+		log.info("modifyUser 회원 수정 완료 {}", mdto);
+		dto.setU_id(dto.getU_id());
+		boolean isc = service.UserModify(dto);
+		return isc? "redirect:/mainOne.do?u_id="+dto.getU_id():"redirect:/modifyUser.do";
 	}
 }

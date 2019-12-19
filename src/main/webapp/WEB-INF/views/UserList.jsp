@@ -38,6 +38,7 @@ tr, td {
 				<th>이메일</th>
 				<th>삭제 여부</th>
 				<th>권한</th>
+				<th>권한 변경</th>
 			</tr>
 			<%
 			for(User_Dto dto : lists){
@@ -50,9 +51,10 @@ tr, td {
 				<td><%=dto.getU_phone()%></td>
 				<td><%=dto.getU_email()%></td>
 				<td><%=dto.getU_enable()%></td>
+				<td><%=dto.getU_auth()%></td>
 				<td>
-							
-					</td>
+					<button value="<%=dto.getU_id()%>">변경</button>
+				</td>
 			</tr>
 			<%
 		}
@@ -76,6 +78,14 @@ tr, td {
 		var chk = document.getElementsByName("chk");
 		for (var i = 0; i < chk.length; i++) {
 			chk[i].checked = bool;
+		}
+	}
+	window.onload = function(){
+		var btns = document.getElementsByTagName("button");
+		for (var i = 0; i < btns.length; i++) {
+			btns[i].onclick = function(){
+				location.href="./authChange.do?u_id="+this.value;
+			}
 		}
 	}
 </script>
