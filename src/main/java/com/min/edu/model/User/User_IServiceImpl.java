@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.min.edu.dto.Hospi_Dto;
 import com.min.edu.dto.User_Dto;
 @Service
 public class User_IServiceImpl implements User_IService {
@@ -52,6 +53,18 @@ public class User_IServiceImpl implements User_IService {
 	public User_Dto Mypage() {
 		log.info("Mypage 회원 마이페이지 \t {}", new Date());
 		return dao.Mypage();
+	}
+
+	@Override
+	public List<Hospi_Dto> SelectAllhospital() {
+		log.info("SelectAllhospital 병원 전체 조회 \t {}", new Date());
+		return dao.SelectAllhospital();
+	}
+
+	@Override
+	public Hospi_Dto SelectOnehospital(String u_id) {
+		log.info("SelectOnehospital 병원 정보 페이지 \t {}", u_id);
+		return dao.SelectOnehospital(u_id);
 	}
 
 

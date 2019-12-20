@@ -15,16 +15,25 @@ UPDATE USER_U
 <select id="SelectAlluser" resultType="Udto">
 SELECT U_ID, U_PASSWORD, U_NAME, U_EMAIL, U_PHONE, U_ENABLE, U_AUTH, F_NAME
  FROM USER_U
+ 	WHERE U_AUTH = #{u_auth}
 </select>  
 <select id="SelectOneuser" parameterType="java.lang.String" resultType="Udto">
 SELECT U_ID, U_PASSWORD, U_NAME, U_EMAIL, U_PHONE, U_ENABLE, U_AUTH, F_NAME
  FROM USER_U
   WHERE U_ID=#{u_id}
-</select> 
+</select>
+<select id="SelectOnehospital" parameterType="java.lang.String" resultType="HSPdto">
+	SELECT H_NAME,H_ADDRESS,H_PHONE,H_MAIL,H_REGI,U_ID,H_ENABLE,MAIN_OBJ,MAIN_ANI
+		FROM HOSPITAL
+			WHERE U_ID = #{u_id}
+</select>
 <update id="AuthChange" parameterType="java.util.Map">
 UPDATE USER_U
  SET U_AUTH=#{u_auth}
   WHERE U_ID=#{u_id}
 </update>
-
+<select id="SelectAllhospital" resultType="HSPdto">
+	SELECT H_NAME, H_ADDRESS,H_PHONE, H_MAIL, H_REGI
+		FROM HOSPITAL
+</select>
 </mapper>

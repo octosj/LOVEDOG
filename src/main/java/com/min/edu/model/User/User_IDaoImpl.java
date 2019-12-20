@@ -7,6 +7,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.min.edu.dto.Hospi_Dto;
 import com.min.edu.dto.User_Dto;
 @Repository
 public class User_IDaoImpl implements User_IDao {
@@ -46,6 +47,16 @@ public class User_IDaoImpl implements User_IDao {
 	@Override
 	public User_Dto Mypage() {
 		return session.selectOne(NS+"Mypage");
+	}
+
+	@Override
+	public List<Hospi_Dto> SelectAllhospital() {
+		return session.selectList(NS+"SelectAllhospital");
+	}
+
+	@Override
+	public Hospi_Dto SelectOnehospital(String u_id) {
+		return session.selectOne(NS+"SelectOnehospital", u_id);
 	}
 
 }

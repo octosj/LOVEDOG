@@ -1,3 +1,4 @@
+<%@page import="com.min.edu.dto.Hospi_Dto"%>
 <%@page import="com.min.edu.dto.User_Dto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>

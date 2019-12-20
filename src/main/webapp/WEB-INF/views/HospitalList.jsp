@@ -1,4 +1,4 @@
-<%@page import="com.min.edu.dto.User_Dto"%>
+<%@page import="com.min.edu.dto.Hospi_Dto"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -23,7 +23,7 @@ tr, td {
 </style>
 </head>
 <%
-	List<User_Dto> lists =(List<User_Dto>)request.getAttribute("lists");
+	List<Hospi_Dto> Hdto =(List<Hospi_Dto>)request.getAttribute("Hdto");
 %>
 <body>
 	<jsp:include page="./header.jsp"></jsp:include>
@@ -33,26 +33,24 @@ tr, td {
 				<th><input type="checkbox" onclick="checkAll(this.checked)">
 				</th>
 				<th>아이디</th>
-				<th>이름</th>
-				<th>전화번호</th>
-				<th>이메일</th>
+				<th>병원 이름</th>
+				<th>병원 주소</th>
+				<th>병원 이메일</th>
+				<th>병원 전화번호</th>
 				<th>삭제 여부</th>
-				<th>권한</th>
-				<th>권한 변경</th>
 			</tr>
 			<%
-			for(User_Dto dto : lists){
+			for(Hospi_Dto dto : Hdto){
 		%>
 
 			<tr>
 				<td><input type="checkbox" name="chk" value="<%=dto.getU_id()%>"></td>
-				<td><%=dto.getU_id()%></td>
-				<td><%=dto.getU_name()%></td>
-				<td><%=dto.getU_phone()%></td>
-				<td><%=dto.getU_email()%></td>
-				<td><%=dto.getU_enable()%></td>
-				<td><%=dto.getU_auth()%></td>
-				<td><button value="<%=dto.getU_id()%>">변경</button></td>
+				<td><%=dto.getU_id()%> </td>
+				<td><%=dto.getH_name()%></td>
+				<td><%=dto.getH_address()%></td>
+				<td><%=dto.getH_mail()%></td>
+				<td><%=dto.getH_phone()%></td>
+				<td><%=dto.getH_enable()%></td>
 			</tr>
 			<%
 		}
@@ -68,23 +66,14 @@ tr, td {
 	</div>
 </body>
 <script type="text/javascript">
-	function back() {
-		location.href="index.do";
-	}
-	
 	function checkAll(bool){
 		var chk = document.getElementsByName("chk");
 		for (var i = 0; i < chk.length; i++) {
 			chk[i].checked = bool;
 		}
 	}
-	window.onload = function(){
-		var btns = document.getElementsByTagName("button");
-		for (var i = 0; i < btns.length; i++) {
-			btns[i].onclick = function(){
-				location.href="./authChange.do?u_id="+this.value;
-			}
-		}
+	function back() {
+		location.href="init.do";
 	}
 </script>
 </html>
