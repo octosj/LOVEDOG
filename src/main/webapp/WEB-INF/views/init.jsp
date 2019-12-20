@@ -19,7 +19,8 @@
 <h2><a href="./reser.do">예약</a></h2>
 
 
-<h1><a href="index.do">User Page 이동</a> </h1>
+<h3><a href="./index.do">User Page 이동</a></h3>
+<h3><a href="./H_index.do">병원 페이지 이동</a></h3>
 
 <a href="./freeboard.do?selEtc=F">자유게시판</a>
 <a href="./reviewboard.do?selEtc=R">후기게시판</a>

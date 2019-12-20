@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
+import com.min.edu.dto.Hospi_Dto;
 import com.min.edu.dto.User_Dto;
 
 @Service
@@ -22,4 +23,8 @@ public interface User_IService {
 		public boolean UserModify(User_Dto dto);
 		// 마이페이지
 		public User_Dto Mypage();
+		// 병원 전체 조회
+		public List<Hospi_Dto> SelectAllhospital();
+		// 병원 단일 조회
+		public Hospi_Dto SelectOnehospital(String u_id);
 }

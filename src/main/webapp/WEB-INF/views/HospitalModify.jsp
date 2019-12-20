@@ -1,4 +1,5 @@
 
+<%@page import="com.min.edu.dto.Hospi_Dto"%>
 <%@page import="com.min.edu.dto.User_Dto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -9,30 +10,26 @@
 <title>Insert title here</title>
 </head>
 	<%
-		User_Dto dto =(User_Dto)request.getAttribute("dto");
+		Hospi_Dto dto =(Hospi_Dto)request.getAttribute("dto");
 	%>
 <body>
 
 	
 	<h1>수정 화면</h1>
 	<div>
-		<form action="./modifyUser.do" method="post" onsubmit="return submitCheck()">
+		<form action="./modifyHospi.do" method="post" onsubmit="return submitCheck()">
 			<table>
 				<tr>
-					<th>이름</th>
-					<td><input type="text" id="u_name" value="${sessionScope.dto.u_name}"></td>
+					<th>병원 이름</th>
+					<td><input type="text" id="h_name" value="${sessionScope.dto.h_name}"></td>
 				</tr>
 				<tr>
-					<th>비밀번호</th>
-					<td><input type="password" id="u_password" value="${sessionScope.dto.u_password}"></td>
+					<th>병원 비밀번호</th>
+					<td><input type="password" id="h_password" value="${sessionScope.dto.h_password}"></td>
 				</tr>
 				<tr>
-					<th>이메일</th>
-					<td><input type="email" id="u_email" value="${sessionScope.dto.u_email}"></td>
-				</tr>
-				<tr>
-					<th>전화번호</th>
-					<td><input type="text" id="u_phone" value="${sessionScope.dto.u_phone}"></td>
+					<th>병원 이메일</th>
+					<td><input type="email" id="h_mail" value="${sessionScope.dto.h_mail}"></td>
 				</tr>
 			</table>
 			
@@ -47,9 +44,9 @@
 	<script type="text/javascript">
 	function submitCheck(){
 // 		alert("작동");
-		var password = document.getElementById("password");
-		var phone = document.getElementById("phone");
-		var email = document.getElementById("email");
+		var h_password = document.getElementById("h_password");
+		var h_phone = document.getElementById("h_phone");
+		var h_email = document.getElementById("h_email");
 // 		alert(add+":"+phone+":"+email);
 		var regExp = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
 		
@@ -57,14 +54,14 @@
 			alert("비밀번호를 입력해주세요");	
 			add.focus();
 			return false;
-		}else if(phone.value == ""){
+		}else if(h_phone.value == ""){
 			alert("전화번호를 입력해주세요");	
-			phone.focus();
+			h_phone.focus();
 			return false;
-		}else if(email.value == "" || email.value.match(regExp) == null){
+		}else if(h_mail.value == "" || h_mail.value.match(regExp) == null){
 			alert("이메일 값 및 형식을 확인 해주세요");	
-			email.value ="";
-			email.focus();
+			h_mail.value ="";
+			h_mail.focus();
 			return false;
 		}
 		return true;

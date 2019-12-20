@@ -24,10 +24,6 @@ tr, td {
 		<img alt="프로필 사진" src="">
 		<table>
 			<tr>
-				<th>아이디</th>
-				<td><%=dto.getU_id() %></td>
-			</tr>
-			<tr>
 				<th>이름</th>
 				<td><%=dto.getU_name() %></td>
 			</tr>
@@ -43,17 +39,17 @@ tr, td {
 		<div>
 			<tr>
 			<td>
+				<input type="button" value="병원 신청" onclick="Hospi_apply()">
 				<input type="button" value="회원 수정" onclick="UserModify()">
 				<input type="button" value="회원 탈퇴" onclick="deleteForm()">
-				<input type="button" value="메인 으로" onclick="back()">
 				</td>
 			</tr>
 		</div>
 	</div>
 
 	<script type="text/javascript">
-		function back() {
-			location.href="index.do";
+		function Hospi_apply() {
+			location.href="apply.do";
 		}
 		function deleteForm() {
 // 			alert("작동");
