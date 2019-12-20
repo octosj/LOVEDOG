@@ -33,7 +33,7 @@ UPDATE USER_U
   WHERE U_ID=#{u_id}
 </update>
 <select id="SelectAllhospital" resultType="HSPdto">
-	SELECT H_NAME, H_ADDRESS,H_PHONE, H_MAIL, H_REGI
+	SELECT H_NAME,H_ADDRESS,H_PHONE,H_MAIL,H_REGI,U_ID,H_ENABLE,MAIN_OBJ,MAIN_ANI
 		FROM HOSPITAL
 </select>
 </mapper>

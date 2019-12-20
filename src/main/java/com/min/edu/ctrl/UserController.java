@@ -55,9 +55,9 @@ public class UserController {
 	@RequestMapping(value = "/H_Mypage.do", method = RequestMethod.GET)
 	public String H_Mypage(Model model, String u_id) {
 		log.info("H_Mypage 병원 정보 페이지  {}", new Date());
-		Hospi_Dto Hdto = service.SelectOnehospital(u_id);
-		model.addAttribute("Hdto", Hdto);
-		return "H_Mypage";
+		User_Dto dto = service.SelectOneuser(u_id);
+		model.addAttribute("dto", dto);
+		return "H_Mypage2";
 	}
 	@RequestMapping(value = "/main.do", method = RequestMethod.GET)
 	public String UserList(Model model) {
@@ -70,6 +70,7 @@ public class UserController {
 	public String HospitalList(Model model) {
 		log.info("HospitalList 병원 전체 조회 페이지 이동 {}", model);
 		List<Hospi_Dto> Hdto = service.SelectAllhospital();
+		log.info("HospitalList 병원 전체 조회 페이지 이동 {}", Hdto);
 		model.addAttribute("Hdto", Hdto);
 		return "HospitalList";
 	}
